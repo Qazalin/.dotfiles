@@ -1,0 +1,12 @@
+{
+    "coc.preferences.formatOnSaveFiletypes": [
+        "javascript",
+        "javascriptreact",
+        "typescript",
+        "typescriptreact",
+        "prisma"
+    ],
+    "tsserver.formatOnType": true,
+    "coc.preferences.formatOnType": true,
+    "rust-analyzer.server.path": "/opt/homebrew/Cellar/rust-analyzer/2022-06-06/bin/rust-analyzer"
+}

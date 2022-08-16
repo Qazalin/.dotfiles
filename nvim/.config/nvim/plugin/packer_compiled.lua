@@ -99,6 +99,11 @@ _G.packer_plugins = {
     path = "/Users/qazal/.local/share/nvim/site/pack/packer/start/fzf.vim",
     url = "https://github.com/junegunn/fzf.vim"
   },
+  ["oceanic-next"] = {
+    loaded = true,
+    path = "/Users/qazal/.local/share/nvim/site/pack/packer/start/oceanic-next",
+    url = "https://github.com/mhartington/oceanic-next"
+  },
   ["packer.nvim"] = {
     loaded = true,
     path = "/Users/qazal/.local/share/nvim/site/pack/packer/start/packer.nvim",

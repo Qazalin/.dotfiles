@@ -28,6 +28,7 @@ hre-script() {
 alias dev="npm run dev"
 alias dash="python index.py"
 alias vim='nvim'
+alias notify="terminal-notifier -title '🔥' -message 'done'"
 
 # Set list of themes to pick from when loading at random
 # Setting this variable when ZSH_THEME=random will cause zsh to load

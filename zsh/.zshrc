@@ -29,6 +29,8 @@ alias dev="npm run dev"
 alias dash="python index.py"
 alias vim='nvim'
 alias notify="terminal-notifier -title '🔥' -message 'done'"
+alias thirdwave="/Users/qazal/work/thirdWave/thirdwave-cli/bin/thirdwave-cli"
+alias c="python3 /Users/qazal/personal/clock/main.py"
 
 # Set list of themes to pick from when loading at random
 # Setting this variable when ZSH_THEME=random will cause zsh to load

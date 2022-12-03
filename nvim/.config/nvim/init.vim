@@ -5,109 +5,84 @@ set tabstop=4 softtabstop=4
 set shiftwidth=4
 set expandtab
 set smartindent
-" for vim devicons plugin
-set encoding=UTF-8
-set guifont=font-hack-nerd-font:h11
 
 let g:python3_host_prog = $HOME . '/.local/venv/nvim/bin/python'
 
 call plug#begin('~/.config/nvim/plugged')
+
+" productivity
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
-
-
-" general
-Plug 'averms/black-nvim', {'do': ':UpdateRemotePlugins'}
-Plug 'pantharshit00/vim-prisma'
-Plug 'dense-analysis/ale'
+Plug 'junegunn/fzf.vim'
 Plug 'github/copilot.vim'
 Plug 'mbbill/undotree'
-Plug 'junegunn/fzf.vim'
-Plug 'mhartington/oceanic-next'
-Plug 'bluz71/vim-nightfly-guicolors'
-Plug 'vim-scripts/AutoComplPop'
-Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app && yarn install' }
-
-" rust
-Plug 'rust-lang/rust.vim'
-
-" python
-Plug 'ambv/black'
-
-" go
-Plug 'darrikonn/vim-gofmt'
-
-" solidity
-Plug 'tomlion/vim-solidity'
-
-Plug 'prettier/vim-prettier', {
-  \ 'do': 'yarn install --frozen-lockfile --production && yarn add prettier-plugin-solidity',
-  \ 'for': ['javascript', 'typescript', 'css', 'less', 'scss', 'json', 'graphql', 'markdown', 'vue', 'svelte', 'yaml', 'html', 'solidity'] }
-" Prettier config
-let g:prettier#exec_cmd_path = '~/.vim/plugged/vim-prettier/node_modules/.bin/prettier'
-let g:prettier#autoformat = 0
-autocmd BufWritePre *.sol Prettier
-
-" ts & js
-Plug 'styled-components/vim-styled-components', { 'branch': 'main' }
-Plug 'neoclide/coc.nvim', {'branch': 'release'}
-
-" gql
-Plug 'jparise/vim-graphql'
-
 " im a designer baby
 Plug 'chrisbra/Colorizer'
 
+" other
+Plug 'folke/tokyonight.nvim'
+Plug 'vim-scripts/AutoComplPop'
+Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app && yarn install' }
+
+" TODO delete this
+Plug 'dense-analysis/ale'
+
+" linters
+Plug 'tell-k/vim-autopep8'
+Plug 'rust-lang/rust.vim'
+Plug 'pantharshit00/vim-prisma'
+Plug 'darrikonn/vim-gofmt'
+Plug 'tomlion/vim-solidity'
+Plug 'prettier/vim-prettier', {
+  \ 'do': 'yarn install --frozen-lockfile --production && yarn add prettier-plugin-solidity',
+  \ 'for': ['javascript', 'typescript', 'css', 'less', 'scss', 'json', 'graphql', 'markdown', 'vue', 'svelte', 'yaml', 'html', 'solidity', 'sql'] }
+" Prettier config
+let g:prettier#exec_cmd_path = '~/.vim/plugged/vim-prettier/node_modules/.bin/prettier'
+let g:prettier#autoformat = 0
+
+Plug 'styled-components/vim-styled-components', { 'branch': 'main' }
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
+Plug 'jparise/vim-graphql'
+
+
 call plug#end()
 
-set nocompatible
 
+" Buffer configs
+autocmd BufWritePre *.sol Prettier
+autocmd BufWritePre *.py :call CocAction('format')
+autocmd BufWritePre *.go :call CocAction('format')
+autocmd BufEnter *.{js,jsx,ts,tsx} :syntax sync fromstart
+autocmd BufLeave *.{js,jsx,ts,tsx} :syntax sync clear
+au BufRead,BufNewFile *.sol  setfiletype solidity
+
+
+" Colors
 if (has("termguicolors"))
     set termguicolors
 endif
-
-" colorscheme OceanicNext
-" colorscheme nightfly
-colorscheme tokyonight
-
-autocmd BufEnter *.{js,jsx,ts,tsx} :syntax sync fromstart
-autocmd BufLeave *.{js,jsx,ts,tsx} :syntax sync clear
-
-let ayucolor="light"  " for light version of theme
-let ayucolor="mirage" " for mirage version of theme
 let ayucolor="dark"   " for dark version of theme
 
-au BufRead,BufNewFile *.cash *.sol  setfiletype solidity
 
-filetype on
-filetype indent on
-filetype plugin on
-if has("syntax")
-    syntax on
-endif
-filetype plugin indent on
-
-
+" Remaps
 let mapleader = " "
-" Project View (pv)
-nnoremap <leader>pv :Vex<CR>
-" source vimrc
-nnoremap <leader><CR> :source ~/.config/nvim/init.vim<CR>
 
 " Navigation
-nnoremap <C-p> :GFiles<CR>
+nnoremap <leader>pv :Vex<CR>
 nnoremap <leader>pf :Files<CR>
+nnoremap <leader>fv :Ex<CR>
+nnoremap <C-p> :GFiles<CR>
+
+" TODO
 " Jump to the prev file in a tree
 " TBD (action: ctl shift 6)
 " Going through a quickfix list
 " https://frontendmasters.com/courses/vim-fundamentals/quickfix/
 nnoremap <C-j> :cnext<CR>
 nnoremap <C-k> :cprev<CR>
-" Yank all the line
+
+" File editing
 nnoremap <leader>Y gg"+yG
-" Make a file executable
 nnoremap <leader>x :!chmod +x %<CR>
-" write, source and pluginstall
-nnoremap <leader>I :w<CR> :source ~/.config/nvim/init.vim<CR> :PlugInstall<CR>
 " Make a new line, leave insert mode and paste what I've yanked
 nnoremap <leader>P o<esc>P<CR>
 " Yank the thing I've selected and keep it in the history
@@ -116,41 +91,65 @@ vnoremap <leader>p "_dP
 vnoremap <leader>y "+y
 nnoremap <leader>y "+y
 
-" Copy the whole file to my system clipboard
+" Other
+nnoremap <leader><CR> :source ~/.config/nvim/init.vim<CR>
+nnoremap <leader>I :w<CR> :source ~/.config/nvim/init.vim<CR> :PlugInstall<CR>
 
 " move it to the outside of the highlighter region and the re-highlight it
 " The = sign automatically indents them
-" Move the highlighed region up
-vnoremap J :m '>+1<CR>gv=gv
-" Move the highlighed region down
+" Move the highlighed region down and up
 vnoremap K :m '<-2<CR>gv=gv
-nnoremap <leader>Y gg"+yG
+vnoremap J :m '>+1<CR>gv=gv
 
 " tmux sessionizer
 nnoremap <silent> <C-s> :silent !tmux neww ~/personal/productivity/tmux-sessionizer<CR>
 nnoremap <silent> <C-f> :silent !tmux neww ~/personal/productivity/tmux-sessionfinder<CR>
 
-" ts lsp
-" GoTo code navigation.
-" GoTo code navigation.
+" Typescript code navigation
 nmap <silent> gd <Plug>(coc-definition)
 nmap <silent> gy <Plug>(coc-type-definition)
 nmap <silent> gi <Plug>(coc-implementation)
 nmap <silent> gr <Plug>(coc-references)
 nnoremap <silent> K :call CocAction('doHover')<CR>
-" sometimes eslint dies
+" TODO sometimes eslint dies
 " nnoremap <silent> <C-R> :CocCommand eslint.restart<CR>
+
+" Code actions
+nnoremap <silent> fmt :call CocAction('format')<CR>
+nnoremap <leader>ca :call CocAction<CR>
+nnoremap <leader>cm :call CocCommand<CR>
 
 " give me the colors
 nnoremap <silent><leader>c :ColorHighlight<CR>
 " view md file
 nnoremap <silent><leader>md :MarkdownPreview<CR>
 let g:mkdp_markdown_css = '~/personal/productivity/markdown.css'
-nnoremap <leader>goe oif err != nil {<CR>return nil, err<CR>}<CR><esc>kkI<esc>
-nnoremap <buffer><silent> <c-q> <cmd>call Black()<cr>
 
+" TODO why don't this work
+nnoremap <leader>goe oif err != nil {<CR>return nil, err<CR>}<CR><esc>kkI<esc>
+
+
+" Global Variables
 let g:rustfmt_autosave = 1
 let g:gofmt_autosave = 1
+let g:lightline = {'colorscheme': 'tokyonight'}
+let g:tokyonight_style = "night"
+let g:tokyonight_italic_functions = 1
+let g:tokyonight_sidebars = [ "qf", "vista_kind", "terminal", "packer" ]
 
+colorscheme tokyonight
+
+" TODO
 " let g:ale_fix_on_save = 1
 " https://blog.colinarms.com/automatically-remove-unused-imports-and-variables-in-vim-using-ale-and-eslint
+"let g:copilot_filetypes = {
+"  \ 'sql': v:false,
+"  \ }
+
+let g:ycm_filetype_blacklist = {
+            \ 'vim': 1,         
+            \ 'lua': 1,         
+            \ 'json': 1,        
+            \ }
+
+au FileType html let b:coc_root_patterns = ['.git', '.env', 'tailwind.config.js', 'tailwind.config.cjs']

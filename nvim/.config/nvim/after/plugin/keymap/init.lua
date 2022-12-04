@@ -29,3 +29,7 @@ vnoremap("<leader>y", "\"+y")
 nmap("<leader>Y", "\"+Y")
 
 nnoremap("<leader>x", "<cmd>!chmod +x %<CR>", { silent = true })
+
+-- tmux sessionizer
+nnoremap("<C-s>", "<cmd>!tmux neww ~/personal/productivity/tmux-sessionizer<CR>", {silent = true})
+nnoremap("<C-f>", "<cmd>!tmux neww ~/personal/productivity/tmux-sessionfinder<CR>", {silent = true})

@@ -1,3 +1,11 @@
+" Ignore files
+set wildignore+=*.pyc
+set wildignore+=*_build/*
+set wildignore+=**/coverage/*
+set wildignore+=**/android/*
+set wildignore+=**/ios/*
+set wildignore+=**/.git/*
+
 set scrolloff=8
 set number
 set relativenumber
@@ -19,9 +27,9 @@ Plug 'mbbill/undotree'
 Plug 'chrisbra/Colorizer'
 
 " other
-Plug 'folke/tokyonight.nvim'
 Plug 'vim-scripts/AutoComplPop'
 Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app && yarn install' }
+Plug 'catppuccin/nvim', { 'as': 'catppuccin' }
 
 " TODO delete this
 Plug 'dense-analysis/ale'
@@ -60,7 +68,11 @@ au BufRead,BufNewFile *.sol  setfiletype solidity
 if (has("termguicolors"))
     set termguicolors
 endif
-let ayucolor="dark"   " for dark version of theme
+colorscheme catppuccin
+
+set t_Co=256
+set termguicolors
+
 
 
 " Remaps
@@ -132,12 +144,6 @@ nnoremap <leader>goe oif err != nil {<CR>return nil, err<CR>}<CR><esc>kkI<esc>
 " Global Variables
 let g:rustfmt_autosave = 1
 let g:gofmt_autosave = 1
-let g:lightline = {'colorscheme': 'tokyonight'}
-let g:tokyonight_style = "night"
-let g:tokyonight_italic_functions = 1
-let g:tokyonight_sidebars = [ "qf", "vista_kind", "terminal", "packer" ]
-
-colorscheme tokyonight
 
 " TODO
 " let g:ale_fix_on_save = 1
@@ -153,3 +159,65 @@ let g:ycm_filetype_blacklist = {
             \ }
 
 au FileType html let b:coc_root_patterns = ['.git', '.env', 'tailwind.config.js', 'tailwind.config.cjs']
+
+
+lua << EOF
+local present, catppuccin = pcall(require, "catppuccin")
+if not present then return end
+
+catppuccin.setup {
+	flavour = "mocha", -- latte, frappe, macchiato, mocha
+	background = { -- :h background
+		light = "latte",
+		dark = "mocha",
+	},
+	term_colors = true,
+	transparent_background = false,
+	compile_path = vim.fn.stdpath "cache" .. "/catppuccin",
+	styles = {
+		comments = {},
+		conditionals = {},
+		loops = {},
+		functions = {},
+		keywords = {},
+		strings = {},
+		variables = {},
+		numbers = {},
+		booleans = {},
+		properties = {},
+		types = {},
+	},
+	color_overrides = {
+		latte = {
+			base = "#E1EEF5",
+		},
+		mocha = {
+			base = "#000000",
+		},
+	},
+	highlight_overrides = {
+		latte = function(latte)
+			return {
+				NvimTreeNormal = { bg = "#D1E5F0" },
+			}
+		end,
+		mocha = function(mocha)
+			return {
+				NvimTreeNormal = { bg = mocha.none },
+				CmpBorder = { fg = mocha.surface2 },
+			}
+		end,
+	},
+	integrations = {
+		treesitter = true,
+		nvimtree = true,
+		dap = {
+			enabled = true,
+			enable_ui = true,
+		},
+		lsp_saga = true,
+		neogit = true,
+	},
+}
+
+vim.api.nvim_command "colorscheme catppuccin"

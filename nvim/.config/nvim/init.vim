@@ -83,6 +83,8 @@ nnoremap <leader>pv :Vex<CR>
 nnoremap <leader>pf :Files<CR>
 nnoremap <leader>fv :Ex<CR>
 nnoremap <C-p> :GFiles<CR>
+nnoremap <C-d> <C-d>zz
+nnoremap <C-u> <C-u>zz
 
 " TODO
 " Jump to the prev file in a tree

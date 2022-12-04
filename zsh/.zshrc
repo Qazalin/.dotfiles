@@ -4,7 +4,8 @@
 # Path to your oh-my-zsh installation.
 export ZSH="$HOME/.oh-my-zsh"
 
-source ~/.zsh/catppuccin_mocha-zsh-syntax-highlighting.zsh
+source ~/zsh-syntax-highlighting/themes/catppuccin_frappe-zsh-syntax-highlighting.zsh
+ZSH_THEME='catppuccin'
 
 if [ -n "${commands[fzf-share]}" ]; then
   source "$(fzf-share)/key-bindings.zsh"
@@ -23,15 +24,14 @@ hre() {
 black() {
     python3 -m black $1
 }
+
 hre-script() {
     npx hardhat run scripts/$1
 }
 
 alias dev="npm run dev"
-alias dash="python index.py"
 alias vim='nvim'
-alias notify="terminal-notifier -title '🔥' -message 'done'"
-alias thirdwave="/Users/qazal/work/thirdWave/thirdwave-cli/bin/thirdwave-cli"
+# alias thirdwave="/Users/qazal/work/thirdWave/thirdwave-cli/bin/thirdwave-cli"
 alias c="python3 /Users/qazal/personal/clock/main.py"
 
 # Set list of themes to pick from when loading at random
@@ -131,3 +131,6 @@ export VOLTA_HOME="$HOME/.volta"
 export PATH="$VOLTA_HOME/bin:$PATH"
 
 export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
+export TERM=xterm-256color
+
+

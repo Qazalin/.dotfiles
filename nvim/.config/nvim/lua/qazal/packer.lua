@@ -36,4 +36,7 @@ return require("packer").startup(function(use)
     -- colors
     use("catppuccin/nvim")
     use({ "rose-pine/neovim", as = "rose-pine" })
+
+    -- lsp
+    use("neovim/nvim-lspconfig")
 end)

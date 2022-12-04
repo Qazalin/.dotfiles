@@ -1,7 +1,11 @@
 local servers = {
-	"sumneko_lua",
+	"tsserver",
 	"pyright",
+	"sumneko_lua",
+	"bashls",
 	"jsonls",
+	"yamlls",
+    "gopls", -- ❤️
 }
 
 local settings = {

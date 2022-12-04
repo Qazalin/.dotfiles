@@ -1,5 +1,11 @@
 local status_ok, _ = pcall(require, "lspconfig")
 if not status_ok then
-    print("ERROR: LSP not installed")
-    return
+  return
 end
+
+require "qazal.lsp.mason"
+require "qazal.lsp.null-ls"
+
+
+local d = require("qazal.lsp.test")
+print("d is: ", d)

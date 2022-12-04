@@ -23,7 +23,9 @@ Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
 Plug 'github/copilot.vim'
 Plug 'mbbill/undotree'
-" im a designer baby
+Plug 'nvim-lua/plenary.nvim'
+Plug 'nvim-telescope/telescope.nvim', { 'tag': '0.1.0' }
+Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 Plug 'chrisbra/Colorizer'
 
 " other
@@ -83,8 +85,12 @@ nnoremap <leader>pv :Vex<CR>
 nnoremap <leader>pf :Files<CR>
 nnoremap <leader>fv :Ex<CR>
 nnoremap <C-p> :GFiles<CR>
+" center when jumping half a page down or up
 nnoremap <C-d> <C-d>zz
 nnoremap <C-u> <C-u>zz
+" center when navigating search results
+nnoremap n nzzzv
+nnoremap N Nzzzv
 
 " TODO
 " Jump to the prev file in a tree

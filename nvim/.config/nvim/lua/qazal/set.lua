@@ -38,3 +38,4 @@ vim.opt.updatetime = 50
 vim.opt.shortmess:append("c")
 
 vim.g.mapleader = " "
+vim.g.copilot_assume_mapped = true

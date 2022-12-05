@@ -1,11 +1,13 @@
 local servers = {
-	"tsserver",
-	"pyright",
-	"sumneko_lua",
-	"bashls",
-	"jsonls",
-	"yamlls",
-    "gopls", -- ❤️
+    "pyright",
+    "jsonls",
+    "gopls",
+    "eslint",
+    "sumneko_lua",
+    "rust_analyzer",
+    "sqlls",
+    "tailwindcss",
+    "tsserver",
 }
 
 local settings = {

@@ -5,7 +5,6 @@
 export ZSH="$HOME/.oh-my-zsh"
 
 source ~/zsh-syntax-highlighting/themes/catppuccin_frappe-zsh-syntax-highlighting.zsh
-ZSH_THEME='catppuccin'
 
 if [ -n "${commands[fzf-share]}" ]; then
   source "$(fzf-share)/key-bindings.zsh"

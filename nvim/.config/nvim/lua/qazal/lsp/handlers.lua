@@ -11,7 +11,6 @@ M.capabilities = cmp_nvim_lsp.default_capabilities(M.capabilities)
 
 M.setup = function()
 	local signs = {
-
 		{ name = "DiagnosticSignError", text = "" },
 		{ name = "DiagnosticSignWarn", text = "" },
 		{ name = "DiagnosticSignHint", text = "" },
@@ -80,12 +79,18 @@ M.on_attach = function(client, bufnr)
 		client.server_capabilities.documentFormattingProvider = false
 	end
 
+
 	lsp_keymaps(bufnr)
 	local status_ok, illuminate = pcall(require, "illuminate")
 	if not status_ok then
 		return
 	end
-	illuminate.on_attach(client)
+    if client.name == "sqlls" then
+        illuminate.on_attach(client, bufnr)
+    else
+        illuminate.on_attach(client)
+    end
 end
+
 
 return M

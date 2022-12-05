@@ -20,6 +20,7 @@ return require("packer").startup(function(use)
     })
     use("github/copilot.vim")
     use("mbbill/undotree")
+    use("norcalli/nvim-colorizer.lua")
 
     use("hrsh7th/nvim-cmp")
     use("hrsh7th/cmp-buffer")
@@ -40,7 +41,9 @@ return require("packer").startup(function(use)
 
     -- lsp
     use("neovim/nvim-lspconfig")
+    use("nanotee/sqls.nvim")
     use "williamboman/mason.nvim" -- simple to use language server installer
     use "williamboman/mason-lspconfig.nvim" -- simple to use language server installer
     use 'jose-elias-alvarez/null-ls.nvim' -- LSP diagnostics and code actions
+    use("sbdchd/neoformat")
 end)

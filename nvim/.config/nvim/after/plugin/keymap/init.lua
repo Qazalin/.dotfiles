@@ -1,5 +1,4 @@
 local Remap = require("qazal.keymap")
-
 local nnoremap = Remap.nnoremap
 local vnoremap = Remap.vnoremap
 local inoremap = Remap.inoremap
@@ -26,10 +25,14 @@ xnoremap("<leader>p", "\"_dP")
 -- second greatest remap ever
 nnoremap("<leader>y", "\"+y")
 vnoremap("<leader>y", "\"+y")
-nmap("<leader>Y", "\"+Y")
+nnoremap("<leader>Y", "gg\"+yG")
+
 
 nnoremap("<leader>x", "<cmd>!chmod +x %<CR>", { silent = true })
 
 -- tmux sessionizer
 nnoremap("<C-s>", "<cmd>!tmux neww ~/personal/productivity/tmux-sessionizer<CR>", {silent = true})
 nnoremap("<C-f>", "<cmd>!tmux neww ~/personal/productivity/tmux-sessionfinder<CR>", {silent = true})
+
+nnoremap("<leader>c", "<cmd>ColorizerToggle<CR>")
+nnoremap("fmt", "<cmd>Neoformat<CR>")

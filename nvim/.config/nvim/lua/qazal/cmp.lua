@@ -1,10 +1,12 @@
 local cmp_status_ok, cmp = pcall(require, "cmp")
 if not cmp_status_ok then
-  return
+    print("cmp not found")
+    return
 end
 
 local snip_status_ok, luasnip = pcall(require, "luasnip")
 if not snip_status_ok then
+    print("cmp.lua: luasnip not found")
   return
 end
 
@@ -43,9 +45,25 @@ local kind_icons = {
   Operator = "",
   TypeParameter = "",
 }
--- find more here: https://www.nerdfonts.com/cheat-sheet
 
-cmp.setup {
+cmp.setup({
+  sources = {
+        { name = "nvim_lsp" },
+        { name = "luasnip" },
+        { name = "buffer" },
+        { name = "path" },
+        { name = "nvim_lua" },
+        { name = "calc" },
+        { name = "emoji" },
+        { name = "treesitter" },
+        { name = "crates" },
+        { name = "orgmode" },
+        { name = "latex_symbols" },
+        { name = "emoji" },
+        { name = "spell" },
+        { name = "look" },
+        { name = "ultisnips" },
+    },
   snippet = {
     expand = function(args)
       luasnip.lsp_expand(args.body) -- For `luasnip` users.
@@ -108,11 +126,6 @@ cmp.setup {
       return vim_item
     end,
   },
-  sources = {
-    { name = "luasnip" },
-    { name = "buffer" },
-    { name = "path" },
-  },
   confirm_opts = {
     behavior = cmp.ConfirmBehavior.Replace,
     select = false,
@@ -124,4 +137,4 @@ cmp.setup {
     ghost_text = false,
     native_menu = false,
   },
-}
+})

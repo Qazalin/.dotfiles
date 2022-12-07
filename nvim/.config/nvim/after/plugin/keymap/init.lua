@@ -28,6 +28,8 @@ vnoremap("<leader>y", "\"+y")
 nnoremap("<leader>Y", "gg\"+yG")
 
 
+nnoremap("<leader>D", "<cmd>!rm -rd '%:p'")
+
 nnoremap("<leader>x", "<cmd>!chmod +x %<CR>", { silent = true })
 
 -- tmux sessionizer

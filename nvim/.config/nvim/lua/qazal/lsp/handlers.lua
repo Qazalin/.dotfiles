@@ -6,16 +6,6 @@ if not status_cmp_ok then
 	return
 end
 
-
-print("cmp_nvim_lsp", cmp_nvim_lsp)
-
-require'cmp'.setup {
-  sources = {
-    { name = 'nvim_lsp' }
-  }
-}
-
-
 local function lsp_keymaps(bufnr)
 	local opts = { noremap = true, silent = true }
 	local keymap = vim.api.nvim_buf_set_keymap

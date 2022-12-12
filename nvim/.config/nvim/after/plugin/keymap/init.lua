@@ -28,7 +28,7 @@ vnoremap("<leader>y", "\"+y")
 nnoremap("<leader>Y", "gg\"+yG")
 
 
-nnoremap("<leader>D", "<cmd>!rm -rd '%:p'")
+-- DANGER, it actually deletes the parent dir instead of the dir u tell it to delete  nnoremap("<leader>D", "<cmd>!rm -rd '%:p'<CR>")
 
 nnoremap("<leader>x", "<cmd>!chmod +x %<CR>", { silent = true })
 

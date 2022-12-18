@@ -46,4 +46,7 @@ return require("packer").startup(function(use)
     use "williamboman/mason-lspconfig.nvim" -- simple to use language server installer
     use 'jose-elias-alvarez/null-ls.nvim' -- LSP diagnostics and code actions
     use("sbdchd/neoformat")
+    -- use("nvim-lua/plenary.nvim")
+    use("ThePrimeagen/harpoon")
+    use("tpope/vim-fugitive")
 end)

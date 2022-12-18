@@ -109,6 +109,11 @@ _G.packer_plugins = {
     path = "/Users/qazal/.local/share/nvim/site/pack/packer/start/copilot.vim",
     url = "https://github.com/github/copilot.vim"
   },
+  harpoon = {
+    loaded = true,
+    path = "/Users/qazal/.local/share/nvim/site/pack/packer/start/harpoon",
+    url = "https://github.com/ThePrimeagen/harpoon"
+  },
   ["lualine.nvim"] = {
     loaded = true,
     path = "/Users/qazal/.local/share/nvim/site/pack/packer/start/lualine.nvim",
@@ -199,6 +204,11 @@ _G.packer_plugins = {
     loaded = true,
     path = "/Users/qazal/.local/share/nvim/site/pack/packer/start/undotree",
     url = "https://github.com/mbbill/undotree"
+  },
+  ["vim-fugitive"] = {
+    loaded = true,
+    path = "/Users/qazal/.local/share/nvim/site/pack/packer/start/vim-fugitive",
+    url = "https://github.com/tpope/vim-fugitive"
   }
 }
 

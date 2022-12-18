@@ -39,6 +39,8 @@ vim.opt.shortmess:append("c")
 
 vim.g.mapleader = " "
 vim.g.copilot_assume_mapped = true
+vim.g.neoformat_try_node_exe = 1
 
 vim.api.nvim_create_augroup("format", {clear = true})
 vim.api.nvim_command("autocmd BufWritePre * undojoin | Neoformat")
+

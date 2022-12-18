@@ -19,13 +19,17 @@ nnoremap("<C-u>", "<C-u>zz")
 nnoremap("n", "nzzzv")
 nnoremap("N", "Nzzzv")
 
--- greatest remap ever
+-- king of remaps
 xnoremap("<leader>p", "\"_dP")
+
+-- queen of remaps
+nnoremap("<leader>v", "vt$")
 
 -- second greatest remap ever
 nnoremap("<leader>y", "\"+y")
 vnoremap("<leader>y", "\"+y")
 nnoremap("<leader>Y", "gg\"+yG")
+
 
 
 -- DANGER, it actually deletes the parent dir instead of the dir u tell it to delete  nnoremap("<leader>D", "<cmd>!rm -rd '%:p'<CR>")

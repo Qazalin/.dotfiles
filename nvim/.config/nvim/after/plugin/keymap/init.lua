@@ -42,3 +42,4 @@ nnoremap("<C-f>", "<cmd>!tmux neww ~/personal/productivity/tmux-sessionfinder<CR
 
 nnoremap("<leader>c", "<cmd>ColorizerToggle<CR>")
 nnoremap("fmt", "<cmd>Neoformat<CR>")
+nnoremap("n", "<leader>s", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]])

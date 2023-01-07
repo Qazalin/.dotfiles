@@ -8,6 +8,7 @@ local servers = {
     "sqlls",
     "tailwindcss",
     "tsserver",
+    "solidity"
 }
 
 local settings = {

@@ -5,7 +5,6 @@ vim.cmd [[packadd packer.nvim]]
 
 return require("packer").startup(function(use)
     use("wbthomason/packer.nvim")
-    use("nvim-lua/plenary.nvim")
     use("nvim-lua/popup.nvim")
     use({
         "nvim-telescope/telescope.nvim", tag = "0.1.0",
@@ -40,25 +39,30 @@ return require("packer").startup(function(use)
     use({ "rose-pine/neovim", as = "rose-pine" })
 
     -- lsp
-    use("neovim/nvim-lspconfig")
+    use"neovim/nvim-lspconfig"
+    use "folke/neodev.nvim"
     use("nanotee/sqls.nvim")
-    use "williamboman/mason.nvim" -- simple to use language server installer
-    use "williamboman/mason-lspconfig.nvim" -- simple to use language server installer
-    use 'jose-elias-alvarez/null-ls.nvim' -- LSP diagnostics and code actions
-    use("sbdchd/neoformat")
-    -- use("nvim-lua/plenary.nvim")
-    use("ThePrimeagen/harpoon")
-    use("tpope/vim-fugitive")
+    use "williamboman/mason.nvim"
+    use "williamboman/mason-lspconfig.nvim"
+    use 'jose-elias-alvarez/null-ls.nvim'
+    use "sbdchd/neoformat"
+    use "nvim-lua/plenary.nvim"
+    use "RRethy/vim-illuminate"
+    use "ThePrimeagen/harpoon"
+    use "lewis6991/gitsigns.nvim"
+    use {
+      "j-hui/fidget.nvim",
+      config = function()
+        require("fidget").setup {}
+      end
+    }
+    use "tpope/vim-fugitive"
     -- Lua
     use {
       "folke/trouble.nvim",
       requires = "kyazdani42/nvim-web-devicons",
       config = function()
-        require("trouble").setup {
-          -- your configuration comes here
-          -- or leave it empty to use the default settings
-          -- refer to the configuration section below
-        }
+        require("trouble").setup{}
       end
     }
 end)

@@ -3,7 +3,7 @@ local servers = {
     "jsonls",
     "gopls",
     "eslint",
-    "sumneko_lua",
+    "lua_ls",
     "rust_analyzer",
     "sqlls",
     "tailwindcss",

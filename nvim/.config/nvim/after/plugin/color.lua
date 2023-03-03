@@ -41,9 +41,13 @@ catppuccin.setup {
 				CmpBorder = { fg = C.surface2 },
 				Pmenu = { bg = C.none },
 				NormalFloat = { bg = C.none },
+                IlluminatedWordText = { bg = '#18181b' },
+                IlluminatedWordRead = { bg = '#18181b' },
+                IlluminatedWordWrite = { bg ='#18181b' },
 			}
 		end,
 	},
 }
 
 vim.cmd.colorscheme "catppuccin"
+

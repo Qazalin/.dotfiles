@@ -29,7 +29,6 @@ return require("packer").startup(function(use)
 	use("hrsh7th/cmp-nvim-lsp")
 	use("saadparwaiz1/cmp_luasnip")
 	use("L3MON4D3/LuaSnip")
-	use("lewis6991/gitsigns.nvim")
 
 	use({
 		"nvim-lualine/lualine.nvim",
@@ -61,4 +60,11 @@ return require("packer").startup(function(use)
 
 	use("gbprod/yanky.nvim")
 	require("yanky").setup({})
+
+	use({
+		"windwp/nvim-autopairs",
+		config = function()
+			require("nvim-autopairs").setup({})
+		end,
+	})
 end)

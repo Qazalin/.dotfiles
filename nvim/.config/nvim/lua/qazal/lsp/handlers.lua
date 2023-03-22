@@ -2,7 +2,7 @@ local M = {}
 
 local status_cmp_ok, cmp_nvim_lsp = pcall(require, "cmp_nvim_lsp")
 if not status_cmp_ok then
-    print("Error: cmp_nvim_lsp not found")
+	print("Error: cmp_nvim_lsp not found")
 	return
 end
 
@@ -35,18 +35,16 @@ M.on_attach = function(client, bufnr)
 		client.server_capabilities.documentFormattingProvider = false
 	end
 
-
 	lsp_keymaps(bufnr)
 	local status_ok, illuminate = pcall(require, "illuminate")
 	if not status_ok then
 		return
 	end
-    if client.name == "sqlls" then
-        illuminate.on_attach(client, bufnr)
-    else
-        illuminate.on_attach(client)
-    end
+	if client.name == "sqlls" then
+		illuminate.on_attach(client, bufnr)
+	else
+		illuminate.on_attach(client)
+	end
 end
-
 
 return M

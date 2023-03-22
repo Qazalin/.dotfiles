@@ -45,7 +45,6 @@ return require("packer").startup(function(use)
     use "williamboman/mason.nvim"
     use "williamboman/mason-lspconfig.nvim"
     use 'jose-elias-alvarez/null-ls.nvim'
-    use "sbdchd/neoformat"
     use "nvim-lua/plenary.nvim"
     use "RRethy/vim-illuminate"
     use "ThePrimeagen/harpoon"
@@ -65,4 +64,8 @@ return require("packer").startup(function(use)
         require("trouble").setup{}
       end
     }
+
+    use("gbprod/yanky.nvim")
+    require("yanky").setup({
+    })
 end)

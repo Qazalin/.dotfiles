@@ -39,19 +39,10 @@ vim.opt.shortmess:append("c")
 
 vim.g.mapleader = " "
 vim.g.copilot_assume_mapped = true
-vim.g.neoformat_try_node_exe = 0
+vim.g.neoformat_try_node_exe = 1
 
+vim.g.neoformat_typescriptreact_prettier = { 'prettier' }
 vim.g.neoformat_enabled_typescript = { "prettier" }
-vim.g.neoformat_typescriptreact_prettier = {
-    exe = "prettier",
-    -- add --parser typescript
-    args = { "--parser", "typescript", "--stdin-filepath", vim.api.nvim_buf_get_name(0) },
-    stdin = 1,
-    try_node_exe = 1,
-}
-vim.g.neoformat_enabled_typescriptreact = { "prettier" }
 vim.g.neoformat_enabled_sql = { "pg_format" }
 vim.g.neoformat_enabled_solidity = {}
-
-vim.api.nvim_create_augroup("format", {clear = true})
-vim.api.nvim_command("autocmd BufWritePre * undojoin | Neoformat")
+vim.api.nvim_command("autocmd BufWritePost * :lua vim.lsp.buf.format()")

@@ -10,10 +10,9 @@ if [ -n "${commands[fzf-share]}" ]; then
   source "$(fzf-share)/key-bindings.zsh"
   source "$(fzf-share)/completion.zsh"
 fi
-# Set name of the theme to load --- if set to "random", it will
-# load a random theme each time oh-my-zsh is loaded, in which case,
-# to know which specific one was loaded, run: echo $RANDOM_THEME
-# See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
+
+# git clone https://github.com/guesswhozzz/021011.zsh-theme ~/021011-tools 
+# mv ~/021011-tools/021011.zsh-theme $ZSH/themes/021011.zsh-theme
 ZSH_THEME=021011
 
 hre() {

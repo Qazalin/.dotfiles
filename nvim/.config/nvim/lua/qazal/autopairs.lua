@@ -3,8 +3,6 @@ if not status_ok then
 	return
 end
 
-print("hello from pirs")
-
 npairs.setup({
 	check_ts = true,
 	ts_config = {

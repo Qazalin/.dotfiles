@@ -58,6 +58,8 @@ return require("packer").startup(function(use)
 		end,
 	})
 
+	use("kyazdani42/nvim-web-devicons")
+
 	use("gbprod/yanky.nvim")
 	require("yanky").setup({})
 

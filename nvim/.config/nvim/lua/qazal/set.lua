@@ -10,7 +10,6 @@ vim.opt.shiftwidth = 4
 vim.opt.expandtab = true
 
 vim.opt.smartindent = true
-
 vim.opt.wrap = true
 
 vim.opt.swapfile = false
@@ -38,6 +37,7 @@ vim.opt.updatetime = 50
 vim.opt.shortmess:append("c")
 
 vim.g.mapleader = " "
+
 vim.g.copilot_assume_mapped = true
 vim.g.neoformat_try_node_exe = 1
 

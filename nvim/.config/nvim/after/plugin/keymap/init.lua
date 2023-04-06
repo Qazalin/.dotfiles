@@ -20,19 +20,15 @@ nnoremap("n", "nzzzv")
 nnoremap("N", "Nzzzv")
 
 -- king of remaps
-xnoremap("<leader>p", "\"_dP")
+xnoremap("<leader>p", '"_dP')
 
 -- queen of remaps
 nnoremap("<leader>v", "vt$")
 
 -- second greatest remap ever
-nnoremap("<leader>y", "\"+y")
-vnoremap("<leader>y", "\"+y")
-nnoremap("<leader>Y", "gg\"+yG")
-
-
-
--- DANGER, it actually deletes the parent dir instead of the dir u tell it to delete  nnoremap("<leader>D", "<cmd>!rm -rd '%:p'<CR>")
+nnoremap("<leader>y", '"+y')
+vnoremap("<leader>y", '"+y')
+nnoremap("<leader>Y", 'gg"+yG')
 
 nnoremap("<leader>x", "<cmd>!chmod +x %<CR>", { silent = true })
 
@@ -41,5 +37,4 @@ nnoremap("<C-s>", "<cmd>!tmux neww ~/personal/productivity/tmux-sessionizer<CR>"
 nnoremap("<C-f>", "<cmd>!tmux neww ~/personal/productivity/tmux-sessionfinder<CR>", { silent = true })
 
 nnoremap("<leader>c", "<cmd>ColorizerToggle<CR>")
-nnoremap("fmt", "<cmd>lua vim.lsp.buf.format()<CR>")
 nnoremap("<leader>s", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]])

@@ -13,8 +13,8 @@ null_ls.setup({
 	sources = {
 		formatting.prettier,
 		formatting.black,
+		formatting.sqlfmt,
 		formatting.stylua,
-		formatting.pg_format,
 		diagnostics.flake8,
 	},
 })

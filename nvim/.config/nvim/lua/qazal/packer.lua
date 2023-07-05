@@ -45,7 +45,9 @@ return require("packer").startup(function(use)
 	use("nanotee/sqls.nvim")
 	use("williamboman/mason.nvim")
 	use("williamboman/mason-lspconfig.nvim")
-	use("jose-elias-alvarez/null-ls.nvim")
+	use("jose-elias-alvarez/null-ls.nvim", {
+        branch = 'main'
+    })
 	use("nvim-lua/plenary.nvim")
 	use("RRethy/vim-illuminate")
 	use("ThePrimeagen/harpoon")

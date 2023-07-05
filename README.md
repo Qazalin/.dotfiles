@@ -6,4 +6,3 @@ TODO:
 - vim bindings
 - sessionizer scripts
 - git configs
-- coc LSP extentions

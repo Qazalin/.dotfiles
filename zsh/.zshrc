@@ -132,3 +132,7 @@ export TERM=xterm-256color
 
 
 export PATH="/Users/qazal/.local/bin:$PATH"
+
+# fnm
+export PATH="/Users/qazal/Library/Application Support/fnm:$PATH"
+eval "$(fnm env --use-on-cd)"

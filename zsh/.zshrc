@@ -127,8 +127,6 @@ source $ZSH/oh-my-zsh.sh
 export PATH="$PATH:/Users/qazal/.foundry/bin"
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
-export VOLTA_HOME=$HOME/.volta
-export PATH=$VOLTA_HOME/bin:$PATH
 
 export TERM=xterm-256color
 

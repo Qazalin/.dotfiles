@@ -12,9 +12,9 @@ null_ls.setup({
 	debug = false,
 	sources = {
 		formatting.prettier,
-		formatting.black,
 		formatting.sqlfmt,
 		formatting.stylua,
-		diagnostics.flake8,
+		formatting.ruff,
+		diagnostics.ruff,
 	},
 })

@@ -1,14 +1,14 @@
 local servers = {
-    "pyright",
-    "jsonls",
-    "gopls",
-    "eslint",
-    "lua_ls",
-    "rust_analyzer",
-    "sqlls",
-    "tailwindcss",
-    "tsserver",
-    "solidity"
+	"jsonls",
+	"gopls",
+	"eslint",
+	"lua_ls",
+	"rust_analyzer",
+	"sqlls",
+	"tailwindcss",
+	"tsserver",
+	"solidity",
+	"ruff_lsp",
 }
 
 local settings = {

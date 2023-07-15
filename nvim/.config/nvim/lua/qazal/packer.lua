@@ -37,7 +37,6 @@ return require("packer").startup(function(use)
 
 	-- colors
 	use("catppuccin/nvim")
-	use("rose-pine/neovim")
 
 	-- lsp
 	use("neovim/nvim-lspconfig")
@@ -46,8 +45,8 @@ return require("packer").startup(function(use)
 	use("williamboman/mason.nvim")
 	use("williamboman/mason-lspconfig.nvim")
 	use("jose-elias-alvarez/null-ls.nvim", {
-        branch = 'main'
-    })
+		branch = "main",
+	})
 	use("nvim-lua/plenary.nvim")
 	use("RRethy/vim-illuminate")
 	use("ThePrimeagen/harpoon")

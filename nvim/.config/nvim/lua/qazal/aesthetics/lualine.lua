@@ -60,3 +60,5 @@ require("lualine").setup({
 	tabline = {},
 	extensions = {},
 })
+
+require("lualine").hide()

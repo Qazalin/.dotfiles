@@ -46,3 +46,4 @@ vim.g.neoformat_enabled_typescript = { "prettier" }
 vim.g.neoformat_enabled_sql = { "pg_format" }
 vim.g.neoformat_enabled_solidity = {}
 vim.api.nvim_command("autocmd BufWritePost * :lua vim.lsp.buf.format()")
+

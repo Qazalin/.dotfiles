@@ -9,6 +9,7 @@ local servers = {
 	"tsserver",
 	"solidity",
 	"ruff_lsp",
+	"pyright",
 }
 
 local settings = {
@@ -40,7 +41,6 @@ local opts = {}
 for _, server in pairs(servers) do
 	opts = {
 		on_attach = require("qazal.lsp.handlers").on_attach,
-		capabilities = require("qazal.lsp.handlers").capabilities,
 	}
 
 	server = vim.split(server, "@")[1]

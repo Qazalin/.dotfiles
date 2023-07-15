@@ -6,5 +6,4 @@ if not status_ok then
 end
 
 require("qazal.lsp.mason")
-require("qazal.lsp.handlers")
 require("qazal.lsp.null-ls")

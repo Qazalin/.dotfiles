@@ -9,7 +9,6 @@ local servers = {
 	"tsserver",
 	"solidity",
 	"ruff_lsp",
-	"pyright",
 }
 
 local settings = {

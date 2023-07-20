@@ -8,7 +8,7 @@ local servers = {
 	"tailwindcss",
 	"tsserver",
 	"solidity",
-	"ruff_lsp",
+	"pyright",
 }
 
 local settings = {

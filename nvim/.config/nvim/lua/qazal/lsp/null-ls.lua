@@ -14,7 +14,7 @@ null_ls.setup({
 		formatting.prettier,
 		formatting.sqlfmt,
 		formatting.stylua,
-		formatting.ruff,
-		diagnostics.ruff,
+		formatting.black,
+		diagnostics.mypy,
 	},
 })

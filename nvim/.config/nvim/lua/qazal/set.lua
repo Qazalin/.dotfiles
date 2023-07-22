@@ -45,5 +45,15 @@ vim.g.neoformat_typescriptreact_prettier = { "prettier" }
 vim.g.neoformat_enabled_typescript = { "prettier" }
 vim.g.neoformat_enabled_sql = { "pg_format" }
 vim.g.neoformat_enabled_solidity = {}
-vim.api.nvim_command("autocmd BufWritePost * :lua vim.lsp.buf.format()")
 
+function custom_on_write()
+	-- Always run vim.lsp.buf.format()
+	vim.lsp.buf.format()
+
+	-- Check if the file is Python, then also run PyrightOrganizeImports
+	if vim.bo.filetype == "python" then
+		vim.cmd("silent! PyrightOrganizeImports")
+	end
+end
+
+vim.api.nvim_command("autocmd BufWritePost * :lua custom_on_write()")

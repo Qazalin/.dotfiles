@@ -33,6 +33,7 @@
         "/Users/qazal/.local/share/nvim/site/pack/packer/start/vim-illuminate/lua",
         "/Users/qazal/.local/share/nvim/site/pack/packer/start/yanky.nvim/lua",
         "/Users/qazal/.dotfiles/nvim/.config/nvim/lua",
+        "${3rd}/luv/library",
         "${3rd}/luv/library"
     ]
 }

@@ -3,8 +3,8 @@ eval "$(/opt/homebrew/bin/brew shellenv)"
 eval "$(/opt/homebrew/bin/brew shellenv)"
 
 # tmux utils
-bindkey -s ^f "~/personal/productivity/tmux-sessionfinder\n"
-bindkey -s ^s "~/personal/productivity/tmux-sessionizer\n"
+bindkey -s ^s "~/.dotfiles/tmux/utils/tmux-sessionizer.sh\n"
+bindkey -s ^f "~/.dotfiles/tmux/utils/tmux-sessionfinder.sh\n"
 eval "$(/opt/homebrew/bin/brew shellenv)"
 
 # Setting PATH for Python 3.10

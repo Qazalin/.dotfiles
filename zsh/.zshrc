@@ -136,3 +136,29 @@ export PATH="/Users/qazal/.local/bin:$PATH"
 # fnm
 export PATH="/Users/qazal/Library/Application Support/fnm:$PATH"
 eval "$(fnm env --use-on-cd)"
+
+# >>> conda initialize >>>
+# !! Contents within this block are managed by 'conda init' !!
+#
+# __conda_setup="$('/Users/qazal/anaconda3/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
+# if [ $? -eq 0 ]; then
+#     eval "$__conda_setup"
+# else
+#     if [ -f "/Users/qazal/anaconda3/etc/profile.d/conda.sh" ]; then
+#         . "/Users/qazal/anaconda3/etc/profile.d/conda.sh"
+#     else
+#         export PATH="/Users/qazal/anaconda3/bin:$PATH"
+#     fi
+# fi
+# unset __conda_setup
+# <<< conda initialize <<<
+
+
+
+# ROS stuff
+echo "export OPENSSL_ROOT_DIR=$(brew --prefix openssl)" >> ~/.zshrc
+
+# Add the Qt directory to the PATH and CMAKE_PREFIX_PATH
+export CMAKE_PREFIX_PATH=$CMAKE_PREFIX_PATH:$(brew --prefix qt@5)
+export PATH=$PATH:$(brew --prefix qt@5)/bin
+export OPENSSL_ROOT_DIR=/opt/homebrew/opt/openssl@3

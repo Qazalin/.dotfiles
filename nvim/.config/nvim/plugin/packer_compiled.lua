@@ -104,6 +104,11 @@ _G.packer_plugins = {
     path = "/Users/qazal/.local/share/nvim/site/pack/packer/start/cmp_luasnip",
     url = "https://github.com/saadparwaiz1/cmp_luasnip"
   },
+  ["copilot.lua"] = {
+    loaded = true,
+    path = "/Users/qazal/.local/share/nvim/site/pack/packer/start/copilot.lua",
+    url = "https://github.com/zbirenbaum/copilot.lua"
+  },
   ["copilot.vim"] = {
     loaded = true,
     path = "/Users/qazal/.local/share/nvim/site/pack/packer/start/copilot.vim",
@@ -138,11 +143,6 @@ _G.packer_plugins = {
     loaded = true,
     path = "/Users/qazal/.local/share/nvim/site/pack/packer/start/neodev.nvim",
     url = "https://github.com/folke/neodev.nvim"
-  },
-  neovim = {
-    loaded = true,
-    path = "/Users/qazal/.local/share/nvim/site/pack/packer/start/neovim",
-    url = "https://github.com/rose-pine/neovim"
   },
   ["null-ls.nvim"] = {
     loaded = true,

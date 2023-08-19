@@ -60,6 +60,7 @@ return require("packer").startup(function(use)
 	})
 
 	use("kyazdani42/nvim-web-devicons")
+	use("zbirenbaum/copilot.lua")
 
 	use("gbprod/yanky.nvim")
 	require("yanky").setup({})

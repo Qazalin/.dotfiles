@@ -30,7 +30,7 @@ hre-script() {
 alias dev="npm run dev"
 alias vim='nvim'
 # alias thirdwave="/Users/qazal/work/thirdWave/thirdwave-cli/bin/thirdwave-cli"
-alias c="python3 /Users/qazal/personal/clock/main.py"
+alias c="python3 /Users/qazal/r/c/main.py"
 alias mxutil='~/tmux-utils/window-killer.sh'
 
 
@@ -161,6 +161,31 @@ echo "export OPENSSL_ROOT_DIR=$(brew --prefix openssl)" >> ~/.zshrc
 # Add the Qt directory to the PATH and CMAKE_PREFIX_PATH
 export CMAKE_PREFIX_PATH=$CMAKE_PREFIX_PATH:$(brew --prefix qt@5)
 export PATH=$PATH:$(brew --prefix qt@5)/bin
+export OPENSSL_ROOT_DIR=/opt/homebrew/opt/openssl@3
+export OPENSSL_ROOT_DIR=/opt/homebrew/opt/openssl@3
+export OPENSSL_ROOT_DIR=/opt/homebrew/opt/openssl@3
+export OPENSSL_ROOT_DIR=/opt/homebrew/opt/openssl@3
+export OPENSSL_ROOT_DIR=/opt/homebrew/opt/openssl@3
+export OPENSSL_ROOT_DIR=/opt/homebrew/opt/openssl@3
+export OPENSSL_ROOT_DIR=/opt/homebrew/opt/openssl@3
+export OPENSSL_ROOT_DIR=/opt/homebrew/opt/openssl@3
+export OPENSSL_ROOT_DIR=/opt/homebrew/opt/openssl@3
+export OPENSSL_ROOT_DIR=/opt/homebrew/opt/openssl@3
+export OPENSSL_ROOT_DIR=/opt/homebrew/opt/openssl@3
+export OPENSSL_ROOT_DIR=/opt/homebrew/opt/openssl@3
+export OPENSSL_ROOT_DIR=/opt/homebrew/opt/openssl@3
+export OPENSSL_ROOT_DIR=/opt/homebrew/opt/openssl@3
+export OPENSSL_ROOT_DIR=/opt/homebrew/opt/openssl@3
+export OPENSSL_ROOT_DIR=/opt/homebrew/opt/openssl@3
+export OPENSSL_ROOT_DIR=/opt/homebrew/opt/openssl@3
+export OPENSSL_ROOT_DIR=/opt/homebrew/opt/openssl@3
+export OPENSSL_ROOT_DIR=/opt/homebrew/opt/openssl@3
+export OPENSSL_ROOT_DIR=/opt/homebrew/opt/openssl@3
+export OPENSSL_ROOT_DIR=/opt/homebrew/opt/openssl@3
+export OPENSSL_ROOT_DIR=/opt/homebrew/opt/openssl@3
+export OPENSSL_ROOT_DIR=/opt/homebrew/opt/openssl@3
+export OPENSSL_ROOT_DIR=/opt/homebrew/opt/openssl@3
+export OPENSSL_ROOT_DIR=/opt/homebrew/opt/openssl@3
 export OPENSSL_ROOT_DIR=/opt/homebrew/opt/openssl@3
 export OPENSSL_ROOT_DIR=/opt/homebrew/opt/openssl@3
 export OPENSSL_ROOT_DIR=/opt/homebrew/opt/openssl@3

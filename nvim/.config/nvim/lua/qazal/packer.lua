@@ -73,4 +73,5 @@ return require("packer").startup(function(use)
 	})
 
 	use("~/stackmap.nvim")
+	use("~/ai.nvim") -- i'll ship this someday
 end)

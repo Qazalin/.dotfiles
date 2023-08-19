@@ -31,6 +31,7 @@ vnoremap("<leader>y", '"+y')
 nnoremap("<leader>Y", 'gg"+yG')
 
 nnoremap("<leader>x", "<cmd>!chmod +x %<CR>", { silent = true })
+nnoremap("<leader><leader>w", "<cmd>w<CR><cmd>source %<CR>", { silent = true })
 
 -- tmux sessionizer
 nnoremap("<C-s>", "<cmd>!tmux neww ~/utils/tmux-sessionizer.sh<CR>", { silent = true })

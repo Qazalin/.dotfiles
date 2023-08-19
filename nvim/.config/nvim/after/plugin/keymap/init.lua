@@ -33,8 +33,8 @@ nnoremap("<leader>Y", 'gg"+yG')
 nnoremap("<leader>x", "<cmd>!chmod +x %<CR>", { silent = true })
 
 -- tmux sessionizer
-nnoremap("<C-s>", "<cmd>!tmux neww ~/personal/productivity/tmux-sessionizer<CR>", { silent = true })
-nnoremap("<C-f>", "<cmd>!tmux neww ~/personal/productivity/tmux-sessionfinder<CR>", { silent = true })
+nnoremap("<C-s>", "<cmd>!tmux neww ~/utils/tmux-sessionizer.sh<CR>", { silent = true })
+nnoremap("<C-f>", "<cmd>!tmux neww ~/utils/tmux-sessionfinder.sh<CR>", { silent = true })
 
 nnoremap("<leader>c", "<cmd>ColorizerToggle<CR>")
 nnoremap("<leader>s", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]])

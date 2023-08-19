@@ -4,8 +4,6 @@
 # Path to your oh-my-zsh installation.
 export ZSH="$HOME/.oh-my-zsh"
 
-source ~/zsh-syntax-highlighting/themes/catppuccin_frappe-zsh-syntax-highlighting.zsh
-
 if [ -n "${commands[fzf-share]}" ]; then
   source "$(fzf-share)/key-bindings.zsh"
   source "$(fzf-share)/completion.zsh"
@@ -161,6 +159,18 @@ echo "export OPENSSL_ROOT_DIR=$(brew --prefix openssl)" >> ~/.zshrc
 # Add the Qt directory to the PATH and CMAKE_PREFIX_PATH
 export CMAKE_PREFIX_PATH=$CMAKE_PREFIX_PATH:$(brew --prefix qt@5)
 export PATH=$PATH:$(brew --prefix qt@5)/bin
+export OPENSSL_ROOT_DIR=/opt/homebrew/opt/openssl@3
+export OPENSSL_ROOT_DIR=/opt/homebrew/opt/openssl@3
+export OPENSSL_ROOT_DIR=/opt/homebrew/opt/openssl@3
+export OPENSSL_ROOT_DIR=/opt/homebrew/opt/openssl@3
+export OPENSSL_ROOT_DIR=/opt/homebrew/opt/openssl@3
+export OPENSSL_ROOT_DIR=/opt/homebrew/opt/openssl@3
+export OPENSSL_ROOT_DIR=/opt/homebrew/opt/openssl@3
+export OPENSSL_ROOT_DIR=/opt/homebrew/opt/openssl@3
+export OPENSSL_ROOT_DIR=/opt/homebrew/opt/openssl@3
+export OPENSSL_ROOT_DIR=/opt/homebrew/opt/openssl@3
+export OPENSSL_ROOT_DIR=/opt/homebrew/opt/openssl@3
+export OPENSSL_ROOT_DIR=/opt/homebrew/opt/openssl@3
 export OPENSSL_ROOT_DIR=/opt/homebrew/opt/openssl@3
 export OPENSSL_ROOT_DIR=/opt/homebrew/opt/openssl@3
 export OPENSSL_ROOT_DIR=/opt/homebrew/opt/openssl@3

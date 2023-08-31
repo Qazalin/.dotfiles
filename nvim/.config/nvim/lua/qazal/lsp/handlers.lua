@@ -1,6 +1,6 @@
 local M = {}
 
-local status_cmp_ok, cmp_nvim_lsp = pcall(require, "cmp_nvim_lsp")
+local status_cmp_ok, _ = pcall(require, "cmp_nvim_lsp")
 if not status_cmp_ok then
 	print("Error: cmp_nvim_lsp not found")
 	return

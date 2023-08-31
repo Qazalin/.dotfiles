@@ -14,13 +14,7 @@ null_ls.setup({
 		formatting.prettier,
 		formatting.sqlfmt,
 		formatting.stylua,
-		formatting.autopep8.with({
-			extra_args = {
-				"-a",
-				"--max-line-length=120",
-				"--indent-size=2",
-			},
-		}),
+		formatting.black,
 		diagnostics.mypy,
 	},
 })

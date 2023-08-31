@@ -39,6 +39,3 @@ nnoremap("<C-f>", "<cmd>!tmux neww ~/utils/tmux-sessionfinder.sh<CR>", { silent 
 
 nnoremap("<leader>c", "<cmd>ColorizerToggle<CR>")
 nnoremap("<leader>s", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]])
-
--- because ppl sometimes dont use a standard formatter
-nnoremap("<leader>W", "<cmd>noa w<CR>")

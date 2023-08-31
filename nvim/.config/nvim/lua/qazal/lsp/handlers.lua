@@ -28,7 +28,9 @@ M.on_attach = function(client, bufnr)
 	if client.name == "tsserver" then
 		client.server_capabilities.documentFormattingProvider = false
 	end
-
+	if client.name == "pyright" then
+		client.server_capabilities.documentFormattingProvider = false
+	end
 	if client.name == "sumneko_lua" then
 		client.server_capabilities.documentFormattingProvider = false
 	end

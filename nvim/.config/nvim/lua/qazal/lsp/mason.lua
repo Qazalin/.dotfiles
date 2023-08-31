@@ -5,7 +5,6 @@ local servers = {
 	"lua_ls",
 	"rust_analyzer",
 	"sqlls",
-	"sqlfmt",
 	"tailwindcss",
 	"tsserver",
 	"pyright",

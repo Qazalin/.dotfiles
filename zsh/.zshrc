@@ -30,6 +30,7 @@ alias vim='nvim'
 # alias thirdwave="/Users/qazal/work/thirdWave/thirdwave-cli/bin/thirdwave-cli"
 alias c="python3 /Users/qazal/r/c/main.py"
 alias mxutil='~/tmux-utils/window-killer.sh'
+alias snowsql='~/Applications/SnowSQL.app/Contents/MacOS/snowsql'
 
 
 # Set list of themes to pick from when loading at random
@@ -160,47 +161,12 @@ echo "export OPENSSL_ROOT_DIR=$(brew --prefix openssl)" >> ~/.zshrc
 export CMAKE_PREFIX_PATH=$CMAKE_PREFIX_PATH:$(brew --prefix qt@5)
 export PATH=$PATH:$(brew --prefix qt@5)/bin
 export OPENSSL_ROOT_DIR=/opt/homebrew/opt/openssl@3
-export OPENSSL_ROOT_DIR=/opt/homebrew/opt/openssl@3
-export OPENSSL_ROOT_DIR=/opt/homebrew/opt/openssl@3
-export OPENSSL_ROOT_DIR=/opt/homebrew/opt/openssl@3
-export OPENSSL_ROOT_DIR=/opt/homebrew/opt/openssl@3
-export OPENSSL_ROOT_DIR=/opt/homebrew/opt/openssl@3
-export OPENSSL_ROOT_DIR=/opt/homebrew/opt/openssl@3
-export OPENSSL_ROOT_DIR=/opt/homebrew/opt/openssl@3
-export OPENSSL_ROOT_DIR=/opt/homebrew/opt/openssl@3
-export OPENSSL_ROOT_DIR=/opt/homebrew/opt/openssl@3
-export OPENSSL_ROOT_DIR=/opt/homebrew/opt/openssl@3
-export OPENSSL_ROOT_DIR=/opt/homebrew/opt/openssl@3
-export OPENSSL_ROOT_DIR=/opt/homebrew/opt/openssl@3
-export OPENSSL_ROOT_DIR=/opt/homebrew/opt/openssl@3
-export OPENSSL_ROOT_DIR=/opt/homebrew/opt/openssl@3
-export OPENSSL_ROOT_DIR=/opt/homebrew/opt/openssl@3
-export OPENSSL_ROOT_DIR=/opt/homebrew/opt/openssl@3
-export OPENSSL_ROOT_DIR=/opt/homebrew/opt/openssl@3
-export OPENSSL_ROOT_DIR=/opt/homebrew/opt/openssl@3
-export OPENSSL_ROOT_DIR=/opt/homebrew/opt/openssl@3
-export OPENSSL_ROOT_DIR=/opt/homebrew/opt/openssl@3
-export OPENSSL_ROOT_DIR=/opt/homebrew/opt/openssl@3
-export OPENSSL_ROOT_DIR=/opt/homebrew/opt/openssl@3
-export OPENSSL_ROOT_DIR=/opt/homebrew/opt/openssl@3
-export OPENSSL_ROOT_DIR=/opt/homebrew/opt/openssl@3
-export OPENSSL_ROOT_DIR=/opt/homebrew/opt/openssl@3
-export OPENSSL_ROOT_DIR=/opt/homebrew/opt/openssl@3
-export OPENSSL_ROOT_DIR=/opt/homebrew/opt/openssl@3
-export OPENSSL_ROOT_DIR=/opt/homebrew/opt/openssl@3
-export OPENSSL_ROOT_DIR=/opt/homebrew/opt/openssl@3
-export OPENSSL_ROOT_DIR=/opt/homebrew/opt/openssl@3
-export OPENSSL_ROOT_DIR=/opt/homebrew/opt/openssl@3
-export OPENSSL_ROOT_DIR=/opt/homebrew/opt/openssl@3
-export OPENSSL_ROOT_DIR=/opt/homebrew/opt/openssl@3
-export OPENSSL_ROOT_DIR=/opt/homebrew/opt/openssl@3
-export OPENSSL_ROOT_DIR=/opt/homebrew/opt/openssl@3
-export OPENSSL_ROOT_DIR=/opt/homebrew/opt/openssl@3
-export OPENSSL_ROOT_DIR=/opt/homebrew/opt/openssl@3
-export OPENSSL_ROOT_DIR=/opt/homebrew/opt/openssl@3
-export OPENSSL_ROOT_DIR=/opt/homebrew/opt/openssl@3
-export OPENSSL_ROOT_DIR=/opt/homebrew/opt/openssl@3
-export OPENSSL_ROOT_DIR=/opt/homebrew/opt/openssl@3
-export OPENSSL_ROOT_DIR=/opt/homebrew/opt/openssl@3
-export OPENSSL_ROOT_DIR=/opt/homebrew/opt/openssl@3
+
+# pnpm
+export PNPM_HOME="/Users/qazal/Library/pnpm"
+case ":$PATH:" in
+  *":$PNPM_HOME:"*) ;;
+  *) export PATH="$PNPM_HOME:$PATH" ;;
+esac
+# pnpm endexport OPENSSL_ROOT_DIR=/opt/homebrew/opt/openssl@3
 export OPENSSL_ROOT_DIR=/opt/homebrew/opt/openssl@3

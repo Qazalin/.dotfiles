@@ -4,9 +4,13 @@ vim.opt.relativenumber = true
 
 vim.opt.errorbells = false
 
+-- the number of spaces that represent one tab
 vim.opt.tabstop = 4
+-- the number of spaces that a <Tab> counts for while performing editing operations, like inserting a <Tab> or using <BS>
 vim.opt.softtabstop = 4
+--  number of spaces used for each level of indentation when you auto-indent your code
 vim.opt.shiftwidth = 4
+-- whether Vim replaces tab characters with spaces
 vim.opt.expandtab = true
 
 vim.opt.smartindent = true
@@ -57,3 +61,4 @@ function custom_on_write()
 end
 
 vim.api.nvim_command("autocmd BufWritePost * :lua custom_on_write()")
+vim.api.nvim_command("autocmd FileType python setlocal expandtab tabstop=2 shiftwidth=2 softtabstop=2")

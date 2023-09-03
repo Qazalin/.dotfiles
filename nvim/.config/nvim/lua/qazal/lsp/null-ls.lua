@@ -19,6 +19,5 @@ null_ls.setup({
                 }",
 			},
 		}),
-		null_ls.builtins.diagnostics.mypy, -- just dont use % with new python files this is annoying
 	},
 })

@@ -42,3 +42,6 @@ nnoremap("<leader>s", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]])
 
 -- because ppl sometimes dont use a standard formatter
 nnoremap("<leader>W", "<cmd>noa w<CR>")
+
+-- zen mode
+nnoremap("<leader>z", "<cmd>set laststatus=0 noshowmode<CR>")

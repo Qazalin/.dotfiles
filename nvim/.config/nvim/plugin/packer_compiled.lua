@@ -245,6 +245,11 @@ _G.packer_plugins = {
     loaded = true,
     path = "/Users/qazal/.local/share/nvim/site/pack/packer/start/yanky.nvim",
     url = "https://github.com/gbprod/yanky.nvim"
+  },
+  ["zenmode.nvim"] = {
+    loaded = true,
+    path = "/Users/qazal/.local/share/nvim/site/pack/packer/start/zenmode.nvim",
+    url = "/Users/qazal/zenmode.nvim"
   }
 }
 

@@ -57,3 +57,9 @@ end
 
 vim.api.nvim_command("autocmd BufWritePost * :lua custom_on_write()")
 vim.api.nvim_command("autocmd FileType python setlocal expandtab tabstop=2 shiftwidth=2 softtabstop=2")
+vim.api.nvim_set_keymap(
+	"n",
+	"<leader>z",
+	":lua require('zenmode').toggle_zenmode()<CR>",
+	{ noremap = true, silent = true }
+)

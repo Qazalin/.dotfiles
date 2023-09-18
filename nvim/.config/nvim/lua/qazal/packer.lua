@@ -76,4 +76,8 @@ return require("packer").startup(function(use)
 	use("~/ai.nvim") -- i'll ship this someday
 	use("~/zenmode.nvim")
 	use("ThePrimeagen/vim-be-good")
+	use({
+		"Bryley/neoai.nvim",
+		requires = { "MunifTanjim/nui.nvim" },
+	})
 end)

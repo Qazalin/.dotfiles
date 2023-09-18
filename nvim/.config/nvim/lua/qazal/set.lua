@@ -51,8 +51,7 @@ vim.g.neoformat_enabled_sql = { "pg_format" }
 vim.g.neoformat_enabled_solidity = {}
 
 function custom_on_write()
-	-- Always run vim.lsp.buf.format()
-	vim.lsp.buf.format()
+    pcall(vim.lsp.buf.format)
 end
 
 vim.api.nvim_command("autocmd BufWritePost * :lua custom_on_write()")

@@ -170,3 +170,7 @@ case ":$PATH:" in
 esac
 # pnpm endexport OPENSSL_ROOT_DIR=/opt/homebrew/opt/openssl@3
 export OPENSSL_ROOT_DIR=/opt/homebrew/opt/openssl@3
+
+# fnm
+export PATH="/Users/qazal/Library/Application Support/fnm:$PATH"
+eval "`fnm env`"

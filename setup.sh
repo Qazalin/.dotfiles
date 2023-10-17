@@ -1,6 +1,6 @@
 # packages
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
-echo 'eval "$(/opt/homebrew/bin/brew shellenv)"') >> ~/.zprofile
+echo 'eval "$(/opt/homebrew/bin/brew shellenv)"' >> ~/.zprofile
 eval "$(/opt/homebrew/bin/brew shellenv)"
 brew install stow tmux neovim fzf wget
 
@@ -27,6 +27,9 @@ eval "$(ssh-agent -s)"
 ssh-add ~/.ssh/id_ed25519
 cat /Users/qazal/.ssh/id_ed25519 | pbcopy
 
+# rust
+curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
+source "$HOME/.cargo/env"
 
 # stuff that's not automated yet
  echo "- [ ] PackerSync required"

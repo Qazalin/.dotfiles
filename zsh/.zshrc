@@ -31,6 +31,7 @@ alias vim='nvim'
 alias c="python3 /Users/qazal/r/c/main.py"
 alias mxutil='~/tmux-utils/window-killer.sh'
 alias snowsql='~/Applications/SnowSQL.app/Contents/MacOS/snowsql'
+alias timestat="python3 /Users/qazal/r/c/stats.py"
 
 
 # Set list of themes to pick from when loading at random
@@ -174,3 +175,17 @@ export OPENSSL_ROOT_DIR=/opt/homebrew/opt/openssl@3
 # fnm
 export PATH="/Users/qazal/Library/Application Support/fnm:$PATH"
 eval "`fnm env`"
+
+alias run() {
+    case "$1" in
+        METAL)  VAR=METAL ;;
+        LLVM)   VAR=LLVM ;;
+        GPU)    VAR=GPU ;;
+        CPU)    VAR=CPU ;;
+        TORCH)  VAR=TORCH ;;
+        *)      echo "invalid arg"; return 1 ;;
+    esac
+    local last_cmd=$(fc -ln -1)
+    local pure_cmd=$(echo $last_cmd | sed 's/^[^ ]* //') # no env vars
+    $VAR=1 $pure_cmd
+}

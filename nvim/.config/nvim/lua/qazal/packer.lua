@@ -71,9 +71,6 @@ return require("packer").startup(function(use)
 		end,
 	})
 
-	use("~/stackmap.nvim")
-	use("~/ai.nvim") -- i'll ship this someday
-	use("~/zenmode.nvim")
 	use("ThePrimeagen/vim-be-good")
 	use({
 		"Bryley/neoai.nvim",

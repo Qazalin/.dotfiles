@@ -1,12 +1,5 @@
 local servers = {
-	"jsonls",
-	"gopls",
-	"eslint",
 	"lua_ls",
-	"rust_analyzer",
-	"sqlls",
-	"tailwindcss",
-	"tsserver",
 	"pyright",
 }
 

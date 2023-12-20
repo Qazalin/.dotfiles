@@ -36,14 +36,22 @@ export TERM=xterm-256color
 export PATH="/Users/qazal/.local/bin:$PATH"
 
 # fnm
-export PATH="/Users/qazal/Library/Application Support/fnm:$PATH"
-eval "$(fnm env --use-on-cd)"
-eval "`fnm env`"
+if [[ "$(uname)" == "Darwin" ]]; then
+    export PATH="/Users/qazal/Library/Application Support/fnm:$PATH"
+    eval "$(fnm env --use-on-cd)"
+    eval "`fnm env`"
+else
+    export PATH="/root/.local/share/fnm:$PATH"
+    eval "`fnm env`"
+fi
 
-# Add the Qt directory to the PATH and CMAKE_PREFIX_PATH
-export CMAKE_PREFIX_PATH=$CMAKE_PREFIX_PATH:$(brew --prefix qt@5)
-export PATH=$PATH:$(brew --prefix qt@5)/bin
-export OPENSSL_ROOT_DIR=/opt/homebrew/opt/openssl@3
+
+if [[ "$(uname)" == "Darwin" ]]; then
+    # Add the Qt directory to the PATH and CMAKE_PREFIX_PATH
+    export CMAKE_PREFIX_PATH=$CMAKE_PREFIX_PATH:$(brew --prefix qt@5)
+    export PATH=$PATH:$(brew --prefix qt@5)/bin
+    export OPENSSL_ROOT_DIR=/opt/homebrew/opt/openssl@3
+fi
 
 # pnpm
 export PNPM_HOME="/Users/qazal/Library/pnpm"

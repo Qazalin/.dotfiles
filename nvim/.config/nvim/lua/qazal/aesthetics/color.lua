@@ -7,8 +7,8 @@ catppuccin.setup({
 	flavour = "mocha", -- latte, frappe, macchiato, mocha
 	term_colors = true,
 	transparent_background = false,
-	no_italic = false,
-	no_bold = false,
+	no_italic = true,
+	no_bold = true,
 	styles = {
 		comments = {},
 		conditionals = {},
@@ -23,19 +23,11 @@ catppuccin.setup({
 		types = {},
 	},
 	color_overrides = {
-		latte = {
-			base = "#E1EEF5",
-		},
 		mocha = {
 			base = "#000000",
 		},
 	},
 	highlight_overrides = {
-		latte = function(_)
-			return {
-				NvimTreeNormal = { bg = "#D1E5F0" },
-			}
-		end,
 		mocha = function(C)
 			return {
 				TabLineSel = { bg = C.pink },
@@ -43,9 +35,9 @@ catppuccin.setup({
 				CmpBorder = { fg = C.surface2 },
 				Pmenu = { bg = C.none },
 				NormalFloat = { bg = C.none },
-				IlluminatedWordText = { bg = "#18181b" },
-				IlluminatedWordRead = { bg = "#18181b" },
-				IlluminatedWordWrite = { bg = "#18181b" },
+				IlluminatedWordText = { bg = "#111110" },
+				IlluminatedWordRead = { bg = "#111110" },
+				IlluminatedWordWrite = { bg = "#111110" },
 			}
 		end,
 	},

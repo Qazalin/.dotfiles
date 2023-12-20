@@ -1,6 +1,3 @@
--- This file can be loaded by calling `lua require("plugins")` from your init.vim
-
--- Only required if you have packer configured as `opt`
 vim.cmd([[packadd packer.nvim]])
 
 return require("packer").startup(function(use)
@@ -17,7 +14,8 @@ return require("packer").startup(function(use)
 			ts_update()
 		end,
 	})
-	use("github/copilot.vim")
+
+	use("zbirenbaum/copilot.lua")
 	use("mbbill/undotree")
 	use("norcalli/nvim-colorizer.lua")
 
@@ -28,11 +26,6 @@ return require("packer").startup(function(use)
 	use("hrsh7th/cmp-nvim-lsp")
 	use("saadparwaiz1/cmp_luasnip")
 	use("L3MON4D3/LuaSnip")
-
-	use({
-		"nvim-lualine/lualine.nvim",
-		requires = { "kyazdani42/nvim-web-devicons", opt = true },
-	})
 
 	-- colors
 	use({
@@ -45,7 +38,6 @@ return require("packer").startup(function(use)
 	-- lsp
 	use("neovim/nvim-lspconfig")
 	use("folke/neodev.nvim")
-	use("nanotee/sqls.nvim")
 	use("williamboman/mason.nvim")
 	use("williamboman/mason-lspconfig.nvim")
 	use("jose-elias-alvarez/null-ls.nvim", {
@@ -63,22 +55,10 @@ return require("packer").startup(function(use)
 		end,
 	})
 
-	use("kyazdani42/nvim-web-devicons")
-	use("zbirenbaum/copilot.lua")
-
-	use("gbprod/yanky.nvim")
-	require("yanky").setup({})
-
 	use({
 		"windwp/nvim-autopairs",
 		config = function()
 			require("nvim-autopairs").setup({})
 		end,
-	})
-
-	use("ThePrimeagen/vim-be-good")
-	use({
-		"Bryley/neoai.nvim",
-		requires = { "MunifTanjim/nui.nvim" },
 	})
 end)

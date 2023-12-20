@@ -76,5 +76,4 @@ return require("packer").startup(function(use)
 		"Bryley/neoai.nvim",
 		requires = { "MunifTanjim/nui.nvim" },
 	})
-	use("tpope/vim-fugitive")
 end)

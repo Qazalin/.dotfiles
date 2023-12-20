@@ -35,7 +35,12 @@ return require("packer").startup(function(use)
 	})
 
 	-- colors
-	use("catppuccin/nvim")
+	use({
+		"folke/tokyonight.nvim",
+		lazy = false,
+		priority = 1000,
+		opts = {},
+	})
 
 	-- lsp
 	use("neovim/nvim-lspconfig")

@@ -1,2 +1,2 @@
-nvim-old/.config/nvim/plugged
-./nvim/.config/nvim/plugin/packer_compiled.lua
+nvim/.config/github-copilot/hosts.json
+nvim/.config/nvim/plugin/packer_compiled.lua

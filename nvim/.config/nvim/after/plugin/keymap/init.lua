@@ -42,3 +42,6 @@ nnoremap("<leader>s", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]])
 
 -- because ppl sometimes dont use a standard formatter
 nnoremap("<leader>W", "<cmd>noa w<CR>")
+
+-- write and source curr file
+nnoremap("<leader>w", "<cmd>w<CR><cmd>source %<CR>", { silent = true })

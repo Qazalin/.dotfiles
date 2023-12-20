@@ -29,6 +29,7 @@ alias dev="npm run dev"
 alias vim='nvim'
 alias c="python3 ~/code/tools/c/main.py"
 alias timestat="python3 /Users/qazal/r/c/stats.py"
+alias differ="~/code/tools/differ/target/release/differ"
 
 plugins=(git)
 source $ZSH/oh-my-zsh.sh

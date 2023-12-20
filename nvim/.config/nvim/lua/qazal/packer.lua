@@ -8,7 +8,6 @@ return require("packer").startup(function(use)
 	use("nvim-lua/popup.nvim")
 	use({
 		"nvim-telescope/telescope.nvim",
-		tag = "0.1.0",
 		requires = { "nvim-lua/plenary.nvim" },
 	})
 	use({
@@ -80,5 +79,5 @@ return require("packer").startup(function(use)
 		"Bryley/neoai.nvim",
 		requires = { "MunifTanjim/nui.nvim" },
 	})
-    use("tpope/vim-fugitive")
+	use("tpope/vim-fugitive")
 end)

@@ -22,7 +22,8 @@ local cwd_color="$(rgb_to_ansi 187 154 247)"
 local git_color="$(rgb_to_ansi 203 185 159)"
 
 # Setting the prompt
-PROMPT="${cwd_color}%1~%f${git_color}($(get_git_branch))%f "
+# NOTE: the single quotes ensure that $(get_git_branch) is evaluated on every display
+PROMPT='${cwd_color}%1~%f(${git_color}$(get_git_branch)%f) '
 
 alias dev="npm run dev"
 alias vim='nvim'

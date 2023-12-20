@@ -12,6 +12,7 @@ vim.opt.softtabstop = 4
 vim.opt.shiftwidth = 4
 -- whether Vim replaces tab characters with spaces
 vim.opt.expandtab = true
+vim.api.nvim_command("autocmd FileType python setlocal expandtab tabstop=2 shiftwidth=2 softtabstop=2")
 
 vim.opt.smartindent = true
 vim.opt.wrap = true
@@ -43,22 +44,20 @@ vim.opt.shortmess:append("c")
 vim.g.mapleader = " "
 
 vim.g.copilot_assume_mapped = true
-vim.g.neoformat_try_node_exe = 1
 
-vim.g.neoformat_typescriptreact_prettier = { "prettier" }
-vim.g.neoformat_enabled_typescript = { "prettier" }
-vim.g.neoformat_enabled_sql = { "pg_format" }
-vim.g.neoformat_enabled_solidity = {}
-
+-- format on save
 function custom_on_write()
-    pcall(vim.lsp.buf.format)
+	local ext = vim.fn.expand("%:e")
+	local extensions_to_format = { "ts", "lua", "tsx" }
+	for _, e in ipairs(extensions_to_format) do
+		if ext == e then
+			pcall(vim.lsp.buf.format)
+			break
+		end
+	end
 end
 
 vim.api.nvim_command("autocmd BufWritePost * :lua custom_on_write()")
-vim.api.nvim_command("autocmd FileType python setlocal expandtab tabstop=2 shiftwidth=2 softtabstop=2")
-vim.api.nvim_set_keymap(
-	"n",
-	"<leader>z",
-	":lua require('zenmode').toggle_zenmode()<CR>",
-	{ noremap = true, silent = true }
-)
+
+-- no statusline
+vim.o.laststatus = 0

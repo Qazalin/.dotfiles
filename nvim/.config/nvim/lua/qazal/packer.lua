@@ -15,7 +15,14 @@ return require("packer").startup(function(use)
 		end,
 	})
 
-	use("zbirenbaum/copilot.lua")
+	use({
+		"zbirenbaum/copilot.lua",
+		cmd = "Copilot",
+		event = "InsertEnter",
+		config = function()
+			require("copilot").setup({})
+		end,
+	})
 	use("mbbill/undotree")
 	use("norcalli/nvim-colorizer.lua")
 

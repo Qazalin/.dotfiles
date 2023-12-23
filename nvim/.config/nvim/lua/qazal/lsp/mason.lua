@@ -3,7 +3,6 @@ local servers = {
 	"pyright",
 	"tsserver",
 	"rust_analyzer",
-	"stylua",
 }
 
 require("mason").setup({ log_level = vim.log.levels.INFO })

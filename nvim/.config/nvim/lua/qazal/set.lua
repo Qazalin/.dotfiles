@@ -61,3 +61,4 @@ vim.api.nvim_command("autocmd BufWritePost * :lua custom_on_write()")
 
 -- no statusline
 vim.o.laststatus = 0
+vim.g.netrw_banner = 0

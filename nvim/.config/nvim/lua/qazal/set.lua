@@ -46,7 +46,7 @@ vim.g.mapleader = " "
 -- format on save
 function custom_on_write()
 	local ext = vim.fn.expand("%:e")
-	local extensions_to_format = { "ts", "lua", "tsx" }
+	local extensions_to_format = { "ts", "lua", "tsx", "rs" }
 	for _, e in ipairs(extensions_to_format) do
 		if ext == e then
 			pcall(vim.lsp.buf.format)

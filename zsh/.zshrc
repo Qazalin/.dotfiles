@@ -27,6 +27,8 @@ PROMPT='${cwd_color}%1~%f(${git_color}$(get_git_branch)%f) '
 
 alias dev="npm run dev"
 alias vim='nvim'
+# TODO: tools should probably just be a constant
+alias crypto="python3 /Users/qazal/code/tools/crypto/main.py"
 alias c="python3 ~/code/tools/c/main.py"
 alias r="./run.sh"
 alias timestat="python3 /Users/qazal/r/c/stats.py"

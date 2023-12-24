@@ -43,8 +43,6 @@ vim.opt.shortmess:append("c")
 
 vim.g.mapleader = " "
 
-vim.g.copilot_assume_mapped = true
-
 -- format on save
 function custom_on_write()
 	local ext = vim.fn.expand("%:e")

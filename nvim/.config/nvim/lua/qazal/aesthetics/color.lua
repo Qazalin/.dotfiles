@@ -6,7 +6,7 @@ end
 tokyonight.setup({
 	style = "storm",
 	transparent = true,
-	styles = { floats = "transparent" },
+	styles = { floats = "transparent", functions = {} },
 })
 
 vim.cmd.colorscheme("tokyonight")

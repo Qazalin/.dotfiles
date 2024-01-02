@@ -28,8 +28,10 @@ PROMPT='${cwd_color}%1~%f(${git_color}$(get_git_branch)%f) '
 alias dev="npm run dev"
 alias vim='nvim'
 alias c="python3 ~/code/tools/c/main.py"
+alias r="./run.sh"
 alias timestat="python3 /Users/qazal/r/c/stats.py"
 alias differ="~/code/tools/differ/target/release/differ"
+alias ship="~/utils/ship.sh"
 
 plugins=(git)
 source $ZSH/oh-my-zsh.sh

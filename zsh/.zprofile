@@ -19,3 +19,5 @@ export PATH=/Applications/SnowSQL.app/Contents/MacOS:$PATH
 
 export PATH="/Users/qazal/.local/share/solana/install/active_release/bin:$PATH"
 eval "$(/opt/homebrew/bin/brew shellenv)"
+
+eval "$(/opt/homebrew/bin/brew shellenv)"

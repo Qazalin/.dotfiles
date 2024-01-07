@@ -34,6 +34,8 @@ alias r="./run.sh"
 alias timestat="python3 /Users/qazal/r/c/stats.py"
 alias differ="~/code/tools/differ/target/release/differ"
 alias ship="~/utils/ship.sh"
+alias sound="python3 ~/code/tools/c/sound.py"
+alias lights="python3 ~/code/tools/c/lights.py"
 
 plugins=(git)
 source $ZSH/oh-my-zsh.sh

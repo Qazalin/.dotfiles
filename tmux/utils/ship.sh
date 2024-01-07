@@ -16,7 +16,7 @@ git push origin $FEATURE_BRANCH
 open "https://github.com/Qazalin/remu/compare/master...$FEATURE_BRANCH"
 
 while true; do
-    read -p "merge $FEATURE_BRANCH into master?" yn
+    read -p "merge $FEATURE_BRANCH into master? " yn
     case $yn in
         [Yy]* ) 
             git checkout master

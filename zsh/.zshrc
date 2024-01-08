@@ -31,11 +31,11 @@ alias vim='nvim'
 alias crypto="python3 /Users/qazal/code/tools/crypto/main.py"
 alias c="python3 ~/code/tools/c/main.py"
 alias r="./run.sh"
+alias s="python3 ~/code/tools/c/sound.py"
+alias lights="python3 ~/code/tools/c/lights.py"
 alias timestat="python3 /Users/qazal/r/c/stats.py"
 alias differ="~/code/tools/differ/target/release/differ"
 alias ship="~/utils/ship.sh"
-alias sound="python3 ~/code/tools/c/sound.py"
-alias lights="python3 ~/code/tools/c/lights.py"
 
 plugins=(git)
 source $ZSH/oh-my-zsh.sh

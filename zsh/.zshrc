@@ -11,28 +11,30 @@ fi
 get_git_branch() {
   git branch 2> /dev/null | sed -n '/^\*/s/^\* //p'
 }
-rgb_to_ansi() {
-  if [[ $1 -ge 0 ]] && [[ $1 -le 255 ]] && [[ $2 -ge 0 ]] && [[ $2 -le 255 ]] && [[ $3 -ge 0 ]] && [[ $3 -le 255 ]]; then
-    printf "\e[38;2;%d;%d;%dm" $1 $2 $3
+hex_to_ansi() {
+  if [[ $1 =~ ^#[0-9A-Fa-f]{6}$ ]]; then
+    local hex=$1
+    local r=$((16#${hex:1:2}))
+    local g=$((16#${hex:3:2}))
+    local b=$((16#${hex:5:2}))
+    printf "\e[38;2;%d;%d;%dm" "$r" "$g" "$b"
   else
     printf "\e[0m"
   fi
 }
-local cwd_color="$(rgb_to_ansi 187 154 247)"
-local git_color="$(rgb_to_ansi 203 185 159)"
-
-# Setting the prompt
+source ~/.env-configs
+local cwd_color="$(hex_to_ansi "$GLOBAL_COLOR")"
+local git_color="$(hex_to_ansi "$GLOBAL_COLOR")"
 # NOTE: the single quotes ensure that $(get_git_branch) is evaluated on every display
-PROMPT='${cwd_color}%1~%f(${git_color}$(get_git_branch)%f) '
+PROMPT='${cwd_color}%1~(${git_color}$(get_git_branch)${cwd_color})%f '
 
 alias dev="npm run dev"
 alias vim='nvim'
 # TODO: tools should probably just be a constant
 alias crypto="python3 /Users/qazal/code/tools/crypto/main.py"
-alias c="python3 ~/code/tools/c/main.py"
+alias c="python3 ~/code/tools/box/main.py"
 alias r="./run.sh"
 alias s="python3 ~/code/tools/c/sound.py"
-alias lights="python3 ~/code/tools/c/lights.py"
 alias timestat="python3 /Users/qazal/r/c/stats.py"
 alias differ="~/code/tools/differ/target/release/differ"
 alias ship="~/utils/ship.sh"

@@ -20,12 +20,9 @@ return require("packer").startup(function(use)
 
 	use("hrsh7th/nvim-cmp")
 	use("hrsh7th/cmp-buffer")
-	use("nvim-tree/nvim-web-devicons")
 	use("hrsh7th/cmp-path")
 	use("hrsh7th/cmp-cmdline")
 	use("hrsh7th/cmp-nvim-lsp")
-	use("saadparwaiz1/cmp_luasnip")
-	use("L3MON4D3/LuaSnip")
 
 	-- colors
 	use({

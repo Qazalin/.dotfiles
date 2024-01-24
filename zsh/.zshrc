@@ -33,9 +33,9 @@ alias vim='nvim'
 # TODO: tools should probably just be a constant
 alias crypto="python3 /Users/qazal/code/tools/crypto/main.py"
 alias c="python3 ~/code/tools/box/main.py"
-alias r="./extra/run.sh"
+alias r="~/code/tinygrad/remu/extra/run.sh"
 alias ci="./extra/test_ops.sh"
-alias s="python3 ~/code/tools/c/sound.py"
+alias s="python3 ~/code/tools/box/sound.py"
 alias timestat="python3 /Users/qazal/r/c/stats.py"
 alias differ="~/code/tools/differ/target/release/differ"
 alias ship="~/utils/ship.sh"

@@ -60,3 +60,8 @@ vim.api.nvim_command("autocmd BufWritePost * :lua custom_on_write()")
 -- no statusline
 vim.o.laststatus = 0
 vim.g.netrw_banner = 0
+
+vim.api.nvim_create_user_command("Remu", function(arg)
+	local fp = "/tmp/" .. string.upper(arg.args) .. ".s"
+	vim.cmd("e " .. fp)
+end, { nargs = 1 })

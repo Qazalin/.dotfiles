@@ -1,12 +1,5 @@
 export ZSH="$HOME/.oh-my-zsh"
 
-# fzf setup
-if [ -n "${commands[fzf-share]}" ]; then
-  source "$(fzf-share)/key-bindings.zsh"
-  source "$(fzf-share)/completion.zsh"
-fi
-[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
-
 # zsh prompt
 get_git_branch() {
   git branch 2> /dev/null | sed -n '/^\*/s/^\* //p'
@@ -33,7 +26,7 @@ alias vim='nvim'
 # TODO: tools should probably just be a constant
 alias crypto="python3 /Users/qazal/code/tools/crypto/main.py"
 alias c="python3 ~/code/tools/box/main.py"
-alias r="~/code/tinygrad/remu/extra/run.sh"
+alias r="python3 l2.py"
 alias ci="./extra/test_ops.sh"
 alias s="python3 ~/code/tools/box/sound.py"
 alias timestat="python3 /Users/qazal/r/c/stats.py"
@@ -55,7 +48,6 @@ else
     eval "`fnm env`"
 fi
 
-
 if [[ "$(uname)" == "Darwin" ]]; then
     # Add the Qt directory to the PATH and CMAKE_PREFIX_PATH
     export CMAKE_PREFIX_PATH=$CMAKE_PREFIX_PATH:$(brew --prefix qt@5)
@@ -69,3 +61,5 @@ case ":$PATH:" in
   *":$PNPM_HOME:"*) ;;
   *) export PATH="$PNPM_HOME:$PATH" ;;
 esac
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh

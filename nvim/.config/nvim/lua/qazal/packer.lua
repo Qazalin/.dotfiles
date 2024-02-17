@@ -16,13 +16,10 @@ return require("packer").startup(function(use)
 	})
 
 	use("mbbill/undotree")
-	use("norcalli/nvim-colorizer.lua")
 
 	use("hrsh7th/nvim-cmp")
 	use("hrsh7th/cmp-buffer")
 	use("hrsh7th/cmp-path")
-	use("hrsh7th/cmp-cmdline")
-	use("hrsh7th/cmp-nvim-lsp")
 
 	-- colors
 	use({
@@ -32,30 +29,8 @@ return require("packer").startup(function(use)
 		opts = {},
 	})
 
-	-- lsp
-	use("neovim/nvim-lspconfig")
-	use("folke/neodev.nvim")
-	use("williamboman/mason.nvim")
-	use("williamboman/mason-lspconfig.nvim")
-	use("jose-elias-alvarez/null-ls.nvim", {
-		branch = "main",
-	})
-	use("nvim-lua/plenary.nvim")
 	use("RRethy/vim-illuminate")
+	use("nvim-lua/plenary.nvim")
 	use("ThePrimeagen/harpoon")
 	use("lewis6991/gitsigns.nvim")
-	use({
-		"folke/trouble.nvim",
-		requires = "kyazdani42/nvim-web-devicons",
-		config = function()
-			require("trouble").setup({})
-		end,
-	})
-
-	use({
-		"windwp/nvim-autopairs",
-		config = function()
-			require("nvim-autopairs").setup({})
-		end,
-	})
 end)

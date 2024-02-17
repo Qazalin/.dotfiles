@@ -43,20 +43,6 @@ vim.opt.shortmess:append("c")
 
 vim.g.mapleader = " "
 
--- format on save
-function custom_on_write()
-	local ext = vim.fn.expand("%:e")
-	local extensions_to_format = { "ts", "lua", "tsx", "rs" }
-	for _, e in ipairs(extensions_to_format) do
-		if ext == e then
-			pcall(vim.lsp.buf.format)
-			break
-		end
-	end
-end
-
-vim.api.nvim_command("autocmd BufWritePost * :lua custom_on_write()")
-
 -- no statusline
 vim.o.laststatus = 0
 vim.g.netrw_banner = 0

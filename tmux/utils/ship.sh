@@ -14,6 +14,7 @@ fi
 git push origin $FEATURE_BRANCH
 
 open "https://github.com/Qazalin/remu/compare/master...$FEATURE_BRANCH"
+#python3 ./extra/sz.py
 
 while true; do
     read -p "merge $FEATURE_BRANCH into master? " yn
@@ -25,7 +26,7 @@ while true; do
             git merge --squash $FEATURE_BRANCH
             git commit -m "$1" -m "$(git log $FEATURE_BRANCH --not master --oneline)"
             git push origin master
-            git branch -D $FEATURE_BRANCH && git push origin --delete $FEATURE_BRANCH
+            git branch -D $FEATURE_BRANCH && git push origin --delete $FEATURE_BRANCH && git push root --delete $FEATURE_BRANCH
             break;;
         [Nn]* ) 
             exit;;

@@ -31,6 +31,7 @@ return require("packer").startup(function(use)
 		priority = 1000,
 		opts = {},
 	})
+	use({ "m00qek/baleia.nvim", tag = "v1.4.0" })
 
 	-- lsp
 	use("neovim/nvim-lspconfig")

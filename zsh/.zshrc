@@ -16,7 +16,7 @@ hex_to_ansi() {
   fi
 }
 
-export GLOBAL_COLOR="#76B900"
+export GLOBAL_COLOR="#46A758"
 export PYTHONPATH="."
 
 local cwd_color="$(hex_to_ansi "$GLOBAL_COLOR")"
@@ -24,7 +24,6 @@ local git_color="$(hex_to_ansi "$GLOBAL_COLOR")"
 # NOTE: the single quotes ensure that $(get_git_branch) is evaluated on every display
 PROMPT='${cwd_color}%1~(${git_color}$(get_git_branch)${cwd_color})%f '
 
-alias r="~/code/tinygrad/remu/extra/run.sh"
 alias cl="clear"
 alias lint="python3 -m ruff . --preview && python3 -m mypy ./tinygrad && python3 -m pylint ./tinygrad"
 alias dev="pnpm run dev"
@@ -74,4 +73,14 @@ function g() {
     git add . && git status -v
   fi
 }
+function r() {
+  if [[ $PWD == *remu* ]]; then
+    eval ~/code/tinygrad/remu/extra/run.sh
+  else
+    eval ~/utils/envar.sh
+  fi
+}
 alias g=g
+alias r=r
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh

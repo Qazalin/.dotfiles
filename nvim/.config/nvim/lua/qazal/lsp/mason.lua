@@ -4,6 +4,7 @@ local servers = {
 	"tsserver",
 	"rust_analyzer",
 	"tailwindcss",
+	"gopls",
 }
 
 require("mason").setup({ log_level = vim.log.levels.INFO })

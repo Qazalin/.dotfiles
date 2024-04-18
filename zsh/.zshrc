@@ -16,7 +16,7 @@ hex_to_ansi() {
   fi
 }
 
-export GLOBAL_COLOR="#46A758"
+export GLOBAL_COLOR="#00b4d8"
 export PYTHONPATH="."
 
 local cwd_color="$(hex_to_ansi "$GLOBAL_COLOR")"
@@ -26,7 +26,8 @@ PROMPT='${cwd_color}%1~(${git_color}$(get_git_branch)${cwd_color})%f '
 
 alias cl="clear"
 alias lint="python3 -m ruff . --preview && python3 -m mypy ./tinygrad && python3 -m pylint ./tinygrad"
-alias dev="pnpm run dev"
+alias dev="npm run dev"
+alias serve="./server/venv/bin/activate && python run.py"
 alias vim='nvim'
 alias c="python3 ~/code/tools/box/main.py"
 alias sz="python3 ./extra/sz.py"
@@ -34,8 +35,8 @@ alias s="python3 ~/code/tools/box/sound.py"
 alias timestat="python3 /Users/qazal/r/c/stats.py"
 alias differ="~/code/tools/differ/target/release/differ"
 alias ship="~/utils/ship.sh"
-alias remu_dev="git cherry-pick 465069a0dc3c7f2045f3348b312a1dcbf1587acd"
-alias rremu_dev="git revert 465069a0dc3c7f2045f3348b312a1dcbf1587acd"
+alias remu_dev="git cherry-pick 203538415bbc70e883fbcbcfd04d50510368bb2d"
+alias rremu_dev="git revert 203538415bbc70e883fbcbcfd04d50510368bb2d"
 
 plugins=(git)
 source $ZSH/oh-my-zsh.sh
@@ -67,18 +68,14 @@ case ":$PATH:" in
 esac
 
 function g() {
-  if [[ $PWD == *tinygrad* ]]; then
+  if [[ $PWD =~ 'tinygrad$' ]]; then
     git add ./tinygrad/ && git add ./test && git status -v
   else
     git add . && git status -v
   fi
 }
 function r() {
-  if [[ $PWD == *remu* ]]; then
     eval ~/code/tinygrad/remu/extra/run.sh
-  else
-    eval ~/utils/envar.sh
-  fi
 }
 alias g=g
 alias r=r

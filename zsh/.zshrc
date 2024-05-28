@@ -16,7 +16,7 @@ hex_to_ansi() {
   fi
 }
 
-export GLOBAL_COLOR="#00b4d8"
+export GLOBAL_COLOR="#007FFF"
 export PYTHONPATH="."
 
 local cwd_color="$(hex_to_ansi "$GLOBAL_COLOR")"
@@ -37,6 +37,9 @@ alias differ="~/code/tools/differ/target/release/differ"
 alias ship="~/utils/ship.sh"
 alias remu_dev="git cherry-pick 203538415bbc70e883fbcbcfd04d50510368bb2d"
 alias rremu_dev="git revert 203538415bbc70e883fbcbcfd04d50510368bb2d"
+alias d="git diff master..HEAD tinygrad/"
+alias d2="export DEBUG=2"
+alias d4="export NOOPT=1 && export DEBUG=4"
 
 plugins=(git)
 source $ZSH/oh-my-zsh.sh

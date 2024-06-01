@@ -5,6 +5,7 @@ if [ -z "$1" ]; then
 fi
 
 FEATURE_BRANCH=$(git rev-parse --abbrev-ref HEAD)
+REPO=$(basename $PWD)
 
 if [ "$FEATURE_BRANCH" = "master" ]; then
     echo "branch is master"
@@ -13,7 +14,7 @@ fi
 
 git push origin $FEATURE_BRANCH
 
-open "https://github.com/Qazalin/remu/compare/master...$FEATURE_BRANCH"
+open "https://github.com/Qazalin/$REPO/compare/master...$FEATURE_BRANCH"
 #python3 ./extra/sz.py
 
 while true; do

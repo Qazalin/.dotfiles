@@ -1,0 +1,7 @@
+[user]
+  name = qazal
+  email = qazal.software@gmail.com
+[init]
+  defaultBranch = master
+[diff]
+  external = difft

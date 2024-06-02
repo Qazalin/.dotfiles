@@ -12,7 +12,7 @@ alias sz="python3 ./extra/sz.py"
 alias s="python3 ~/code/tools/box/sound.py"
 alias differ="~/code/tools/differ/target/release/differ"
 alias ship="~/utils/ship.sh"
-alias d="git diff master..HEAD tinygrad/"
+alias d="git diff master..HEAD"
 alias d0="export DEBUG=0"
 alias d2="export DEBUG=2"
 alias d4="export NOOPT=1 && export DEBUG=4"
@@ -47,11 +47,12 @@ esac
 
 function g() {
   if [[ $PWD =~ 'tinygrad$' ]]; then
-    git add ./tinygrad/ && git add ./test && git status -v
+    git add ./tinygrad/ && git add ./test && git add ./.github && git status -v
   else
     git add . && git status -v
   fi
 }
+
 function r() {
   eval ~/code/tinygrad/remu/extra/run.sh
 }
@@ -76,6 +77,7 @@ autoload -Uz _zinit
 
 autoload  -U compinit && compinit
 zinit cdreplay -q
+[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 bindkey '^w' autosuggest-accept
 bindkey '^p' history-search-backward
 bindkey '^n' history-search-forward
@@ -95,3 +97,4 @@ setopt hist_find_no_dups
 
 alias g=g
 alias r=r
+alias s="~/utils/tmux-sessionizer.sh"

@@ -13,9 +13,10 @@ alias s="python3 ~/code/tools/box/sound.py"
 alias differ="~/code/tools/differ/target/release/differ"
 alias ship="~/utils/ship.sh"
 alias d="git diff master..HEAD"
-alias d0="export DEBUG=0"
+alias d0="export DEBUG=0 && export NOOPT=0"
 alias d2="export DEBUG=2"
 alias d4="export NOOPT=1 && export DEBUG=4"
+alias opt="export NOOPT=0"
 alias lint="python3 -m ruff . --preview && python3 -m mypy ./tinygrad && python3 -m pylint ./tinygrad"
 
 export TERM=xterm-256color

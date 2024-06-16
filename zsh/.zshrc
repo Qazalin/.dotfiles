@@ -6,7 +6,7 @@ fi
 export PYTHONPATH="."
 alias cl="clear"
 alias dev="pnpm run dev"
-alias vim='nvim'
+alias vim='$HOME/nvim-macos-arm64/bin/nvim'
 alias c="python3 ~/code/tools/box/main.py"
 alias sz="python3 ./extra/sz.py"
 alias s="python3 ~/code/tools/box/sound.py"
@@ -23,14 +23,9 @@ export TERM=xterm-256color
 export PATH="/Users/qazal/.local/bin:$PATH"
 
 # fnm
-if [[ "$(uname)" == "Darwin" ]]; then
-  export PATH="/Users/qazal/Library/Application Support/fnm:$PATH"
-  eval "$(fnm env --use-on-cd)"
-  eval "`fnm env`"
-else
-  export PATH="/root/.local/share/fnm:$PATH"
-  eval "`fnm env`"
-fi
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
 if [[ "$(uname)" == "Darwin" ]]; then
   # Add the Qt directory to the PATH and CMAKE_PREFIX_PATH

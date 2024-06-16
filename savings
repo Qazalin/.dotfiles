@@ -1,0 +1,9 @@
+20 GB out of 245 GB used
+22.82 GB after browser and devtools (devloper: 2.45, docs: 0, applications: 1.2GB)
+after install homebrew: 2.45 developer?
+after installing everything for dotfiles: 23.34 GB, 2.45 dev, docs: 328 MB
+after more dev stuff (before cargo) 373GB docs, total 24.1GB
+after cargo 25.3 with default, minimal is 24.59, better.
+with everything: 24.9
+1. rust target is huge
+2. minimal browser possible?

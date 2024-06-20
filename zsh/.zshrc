@@ -7,9 +7,9 @@ export PYTHONPATH="."
 alias cl="clear"
 alias dev="pnpm run dev"
 alias vim='$HOME/nvim-macos-arm64/bin/nvim'
-alias c="python3 ~/code/tools/box/main.py"
+alias c="python3 ~/code/box/main.py"
 alias sz="python3 ./extra/sz.py"
-alias s="python3 ~/code/tools/box/sound.py"
+alias s="python3 ~/code/box/sound.py"
 alias differ="~/code/tools/differ/target/release/differ"
 alias ship="~/utils/ship.sh"
 alias d="git diff master..HEAD"
@@ -17,7 +17,8 @@ alias d0="export DEBUG=0 && export NOOPT=0"
 alias d2="export DEBUG=2"
 alias d4="export NOOPT=1 && export DEBUG=4"
 alias opt="export NOOPT=0"
-alias lint="python3 -m ruff check . --preview && python3 -m mypy ./tinygrad --strict-equality && python3 -m pylint ./tinygrad"
+alias lint="python3 -m ruff check . --preview && python3 -m mypy ./tinygrad --strict-equality && python3 -m pylint ./tinygrad && check_dangerous_dtype_is"
+alias n="vim $HOME/.notes"
 
 export TERM=xterm-256color
 export PATH="/Users/qazal/.local/bin:$PATH"
@@ -50,7 +51,21 @@ function g() {
 }
 
 function r() {
-  eval ~/code/tinygrad/remu/extra/run.sh
+  eval ~/code/remu/extra/run.sh
+}
+
+# TODO: remove the noise
+check_dangerous_dtype_is() {
+  local directory="tinygrad"
+  local patterns=("dtypes.* is " "dtype is ")
+  local file_extension=".py"
+  find "$directory" -name "*$file_extension" | while read -r file; do
+    for pattern in "${patterns[@]}"; do
+      if rg "$pattern" "$file" | grep -vqE 'is\s+None|is\s+not\s+None'; then
+        rg "$pattern" "$file" | grep -vE 'is\s+None|is\s+not\s+None'
+      fi
+    done
+  done
 }
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh

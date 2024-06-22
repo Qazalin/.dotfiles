@@ -5,7 +5,7 @@ fi
 
 export PYTHONPATH="."
 alias cl="clear"
-alias dev="pnpm run dev"
+alias dev="npm run dev"
 alias vim='$HOME/nvim-macos-arm64/bin/nvim'
 alias c="python3 ~/code/box/main.py"
 alias sz="python3 ./extra/sz.py"
@@ -19,6 +19,7 @@ alias d4="export NOOPT=1 && export DEBUG=4"
 alias opt="export NOOPT=0"
 alias lint="python3 -m ruff check . --preview && python3 -m mypy ./tinygrad --strict-equality && python3 -m pylint ./tinygrad && check_dangerous_dtype_is"
 alias n="vim $HOME/.notes"
+alias ci="$HOME/code/ci/target/release/ci"
 
 export TERM=xterm-256color
 export PATH="/Users/qazal/.local/bin:$PATH"

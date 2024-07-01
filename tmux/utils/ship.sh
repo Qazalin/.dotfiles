@@ -27,7 +27,7 @@ while true; do
             git merge --squash $FEATURE_BRANCH
             git commit -m "$1" -m "$(git log $FEATURE_BRANCH --not master --oneline)"
             git push origin master
-            git branch -D $FEATURE_BRANCH && git push origin --delete $FEATURE_BRANCH && git push origin --delete $FEATURE_BRANCH
+            git branch -D $FEATURE_BRANCH && git push origin --delete $FEATURE_BRANCH
             break;;
         [Nn]* ) 
             exit;;

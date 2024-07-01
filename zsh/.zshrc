@@ -1,8 +1,3 @@
-# prompt comes first
-if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
-  source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
-fi
-
 export PYTHONPATH="."
 alias cl="clear"
 alias dev="npm run dev"
@@ -18,6 +13,9 @@ alias d2="export DEBUG=2"
 alias d4="export NOOPT=1 && export DEBUG=4"
 alias opt="export NOOPT=0"
 alias lint="python3 -m ruff check . --preview && python3 -m mypy ./tinygrad --strict-equality && python3 -m pylint ./tinygrad && check_dangerous_dtype_is"
+alias b="git branch"
+alias gr="git rebase -i HEAD~2"
+alias gca="git commit --amend"
 alias n="vim $HOME/.notes"
 alias ci="$HOME/code/ci/target/release/ci"
 
@@ -25,9 +23,9 @@ export TERM=xterm-256color
 export PATH="/Users/qazal/.local/bin:$PATH"
 
 # fnm
-export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+# export NVM_DIR="$HOME/.nvm"
+# [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+# [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
 if [[ "$(uname)" == "Darwin" ]]; then
   # Add the Qt directory to the PATH and CMAKE_PREFIX_PATH
@@ -45,14 +43,14 @@ esac
 
 function g() {
   if [[ $PWD =~ 'tinygrad$' ]]; then
-    git add ./tinygrad/ && git add ./test && git add ./.github && git status -v
+    git add ./tinygrad/ && git add ./test && git add ./.github && git add ./extra && git status -v
   else
     git add . && git status -v
   fi
 }
 
 function r() {
-  eval ~/code/remu/extra/run.sh
+  eval /Users/qazal/code/egg/extra/run.sh
 }
 
 # TODO: remove the noise
@@ -79,34 +77,7 @@ if [[ ! -f $HOME/.local/share/zinit/zinit.git/zinit.zsh ]]; then
     print -P "%F{160} The clone has failed.%f%b"
 fi
 
-source "$HOME/.local/share/zinit/zinit.git/zinit.zsh"
-zinit ice depth=1; zinit light romkatv/powerlevel10k
-zinit light zsh-users/zsh-completions
-zinit light zsh-users/zsh-autosuggestions
-zinit snippet OMZP::git
-autoload -Uz _zinit
-(( ${+_comps} )) && _comps[zinit]=_zinit
-
-autoload  -U compinit && compinit
-zinit cdreplay -q
-[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
-bindkey '^w' autosuggest-accept
-bindkey '^p' history-search-backward
-bindkey '^n' history-search-forward
-
-# history, https://github.com/dreamsofautonomy/zensh/blob/main/.zshrc
-HISTSIZE=5000
-HISTFILE=~/.zsh_history
-SAVEHIST=$HISTSIZE
-HISTDUP=erase
-setopt appendhistory
-setopt sharehistory
-setopt hist_ignore_space
-setopt hist_ignore_all_dups
-setopt hist_save_no_dups
-setopt hist_ignore_dups
-setopt hist_find_no_dups
-
 alias g=g
 alias r=r
 alias s="~/utils/tmux-sessionizer.sh"
+PROMPT='%~> '

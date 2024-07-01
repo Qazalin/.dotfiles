@@ -38,20 +38,12 @@ return require("packer").startup(function(use)
 	use("folke/neodev.nvim")
 	use("williamboman/mason.nvim")
 	use("williamboman/mason-lspconfig.nvim")
-	use("jose-elias-alvarez/null-ls.nvim", {
-		branch = "main",
-	})
+	use("jose-elias-alvarez/null-ls.nvim", { branch = "main" })
 	use("nvim-lua/plenary.nvim")
 	use("RRethy/vim-illuminate")
 	use("ThePrimeagen/harpoon")
 	use("lewis6991/gitsigns.nvim")
-	use({
-		"folke/trouble.nvim",
-		requires = "kyazdani42/nvim-web-devicons",
-		config = function()
-			require("trouble").setup({})
-		end,
-	})
+	use("folke/trouble.nvim", { cmd = "Trouble" })
 
 	use({
 		"windwp/nvim-autopairs",

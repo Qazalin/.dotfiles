@@ -7,3 +7,4 @@ end
 
 require("qazal.lsp.mason")
 require("qazal.lsp.null-ls")
+require("trouble").setup()

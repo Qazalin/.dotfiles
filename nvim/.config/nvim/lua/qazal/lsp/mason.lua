@@ -1,10 +1,10 @@
 local servers = {
 	"lua_ls",
-	"pyright",
 	"tsserver",
 	"rust_analyzer",
 	"tailwindcss",
 	"gopls",
+    "jedi_language_server"
 }
 
 require("mason").setup({ log_level = vim.log.levels.INFO })

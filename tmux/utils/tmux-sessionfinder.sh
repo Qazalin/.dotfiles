@@ -1,4 +1,4 @@
-# !#/bin/env bash #why do you say no such file
+#!/bin/bash
 
 args=()
 

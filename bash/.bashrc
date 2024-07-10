@@ -6,21 +6,24 @@ alias sz="python3 ./extra/sz.py"
 alias ship="~/utils/ship.sh"
 alias d0="export DEBUG=0 && export NOOPT=0"
 alias d2="export DEBUG=2"
+alias d3="export DEBUG=3"
 alias d4="export NOOPT=1 && export DEBUG=4"
 alias opt="export NOOPT=0"
 alias n="vim $HOME/.notes"
 alias lint="python3 -m ruff check . --preview && python3 -m mypy ./tinygrad --strict-equality && python3 -m pylint ./tinygrad"
 alias b="git branch"
 alias d="git diff master..HEAD"
+alias dt="difft /tmp/k0 /tmp/k1"
 alias gr="git rebase -i HEAD~2"
 alias gca="git commit --amend"
+alias gcae="git commit --amend --no-edit"
 alias gp="git push origin HEAD --force"
 alias m="git checkout master"
 alias bd="git branch | rg -v 'master' | xargs git branch -D"
 
 export PYTHONPATH="."
 export TERM=xterm-256color
-export PATH=$HOME/bin:/usr/local/bin:/opt/homebrew/bin:/opt/homebrew/opt/node@20/bin:$PATH
+export PATH=$HOME/bin:/usr/local/bin:/opt/homebrew/bin:/opt/homebrew/opt/node@20/bin:$HOME/.cargo/bin:$PATH
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash
 
 #if [[ "$(uname)" == "Darwin" ]]; then
@@ -40,10 +43,14 @@ function g() {
   fi
 }
 function r() {
-  eval /Users/qazal/code/remu/extra/run.sh
+  # eval /Users/qazal/code/remu/extra/run.sh
+  cargo build --release
 }
 PS1='\w> '
 
 stty -ixon
 bind -x '"\C-s": "~/utils/tmux-sessionizer.sh"'
 bind -x '"\C-f": "~/utils/tmux-sessionfinder.sh"'
+HISTSIZE=10000
+HISTFILESIZE=20000
+alias t="vim /tmp/k.s"

@@ -2,6 +2,7 @@ local servers = {
 	"lua_ls",
 	"pyright",
 	"rust_analyzer",
+	"tsserver",
 }
 
 require("mason").setup({ log_level = vim.log.levels.INFO })

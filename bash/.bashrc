@@ -8,10 +8,13 @@ alias d0="export DEBUG=0 && export NOOPT=0"
 alias d2="export DEBUG=2"
 alias d3="export DEBUG=3"
 alias d4="export NOOPT=1 && export DEBUG=4"
+alias d5="export NOOPT=1 && export DEBUG=5"
 alias opt="export NOOPT=0"
 alias n="vim $HOME/.notes"
 alias lint="python3 -m ruff check . --preview && python3 -m mypy ./tinygrad --strict-equality && python3 -m pylint ./tinygrad"
 alias b="git branch"
+alias bn="git push origin HEAD:update_benchmark -f"
+alias up="git pull origin master --rebase"
 alias d="git diff master..HEAD"
 alias dt="difft /tmp/k0 /tmp/k1"
 alias gr="git rebase -i HEAD~2"
@@ -46,7 +49,8 @@ function r() {
   # eval /Users/qazal/code/remu/extra/run.sh
   cargo build --release
 }
-PS1='\w> '
+
+PS1='$(if [[ $? == 0 ]]; then echo "\w> "; else echo "\[\e[31m\]\w> \[\e[0m\]"; fi)'
 
 stty -ixon
 bind -x '"\C-s": "~/utils/tmux-sessionizer.sh"'

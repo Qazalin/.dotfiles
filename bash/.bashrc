@@ -11,18 +11,24 @@ alias d4="export NOOPT=1 && export DEBUG=4"
 alias d5="export NOOPT=1 && export DEBUG=5"
 alias opt="export NOOPT=0"
 alias n="vim $HOME/.notes"
-alias lint="python3 -m ruff check . --preview && python3 -m mypy ./tinygrad --strict-equality && python3 -m pylint ./tinygrad"
+alias lint="python3 -m ruff check --extend-exclude t.py --extend-exclude ref.py --preview && python3 -m mypy ./tinygrad --strict-equality && python3 -m pylint ./tinygrad"
 alias b="git branch"
 alias bn="git push origin HEAD:update_benchmark -f"
 alias up="git pull origin master --rebase"
 alias d="git diff master..HEAD"
-alias dt="difft /tmp/k0 /tmp/k1"
 alias gr="git rebase -i HEAD~2"
 alias gca="git commit --amend"
 alias gcae="git commit --amend --no-edit"
 alias gp="git push origin HEAD --force"
+alias gf="git stash && git checkout suops"
+alias gm="git stash && git checkout master"
+alias gps="git push origin HEAD"
+alias ghr="git fetch origin master && git reset --hard origin/master"
+alias gmr="git fetch origin master && git merge origin/master --no-edit"
 alias m="git checkout master"
 alias bd="git branch | rg -v 'master' | xargs git branch -D"
+alias differ="$HOME/code/differ/target/release/differ"
+alias dt="differ diff /tmp/k0 /tmp/k1"
 
 export PYTHONPATH="."
 export TERM=xterm-256color
@@ -46,8 +52,11 @@ function g() {
   fi
 }
 function r() {
-  # eval /Users/qazal/code/remu/extra/run.sh
-  cargo build --release
+  eval /Users/qazal/code/remu/extra/run.sh
+  # cargo build --release
+}
+function gd() {
+    open https://github.com/tinygrad/tinygrad/compare/master...$(git branch --show-current)
 }
 
 PS1='$(if [[ $? == 0 ]]; then echo "\w> "; else echo "\[\e[31m\]\w> \[\e[0m\]"; fi)'

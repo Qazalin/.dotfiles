@@ -16,19 +16,23 @@ alias b="git branch"
 alias bn="git push origin HEAD:update_benchmark -f"
 alias up="git pull origin master --rebase"
 alias d="git diff master..HEAD"
+alias f1="feat f1"
+alias f2="feat f2"
+alias f3="feat f3"
 alias gr="git rebase -i HEAD~2"
 alias gca="git commit --amend"
 alias gcae="git commit --amend --no-edit"
 alias gp="git push origin HEAD --force"
-alias gf="git stash && git checkout suops"
-alias gm="git stash && git checkout master"
+alias gf="git stash && git checkout reduce_fusor"
+alias gm="git checkout master"
+alias gms="git stash && git checkout master"
 alias gps="git push origin HEAD"
 alias ghr="git fetch origin master && git reset --hard origin/master"
 alias gmr="git fetch origin master && git merge origin/master --no-edit"
-alias m="git checkout master"
 alias bd="git branch | rg -v 'master' | xargs git branch -D"
 alias differ="$HOME/code/differ/target/release/differ"
 alias dt="differ diff /tmp/k0 /tmp/k1"
+alias prv="gh pr view --web"
 
 export PYTHONPATH="."
 export TERM=xterm-256color
@@ -59,7 +63,15 @@ function gd() {
     open https://github.com/tinygrad/tinygrad/compare/master...$(git branch --show-current)
 }
 
-PS1='$(if [[ $? == 0 ]]; then echo "\w> "; else echo "\[\e[31m\]\w> \[\e[0m\]"; fi)'
+function start_ssh_agent() {
+  ssh-add -l # shows nothing
+  eval "$(ssh-agent -s)"
+  ssh-add ~/.ssh/id_ed25519
+  # shows stuff
+  ssh-add -l
+}
+
+PS1='$(if [[ $? == 0 ]]; then echo "\w"; else echo "\[\e[31m\]\w\[\e[0m\]"; fi)$(git branch 2>/dev/null | grep \* | sed "s/* / (/" | sed "s/$/) /")> '
 
 stty -ixon
 bind -x '"\C-s": "~/utils/tmux-sessionizer.sh"'

@@ -6,27 +6,28 @@ fi
 
 FEATURE_BRANCH=$(git rev-parse --abbrev-ref HEAD)
 REPO=$(basename $PWD)
+MASTER=$(git branch | rg -o 'main|master')
 
-if [ "$FEATURE_BRANCH" = "master" ]; then
-    echo "branch is master"
+if [ "$FEATURE_BRANCH" = "$MASTER" ]; then
+    echo "branch is $MASTER"
     exit 1
 fi
 
 git push origin $FEATURE_BRANCH
 
-open "https://github.com/Qazalin/$REPO/compare/master...$FEATURE_BRANCH"
+open "https://github.com/Qazalin/$REPO/compare/$MASTER...$FEATURE_BRANCH"
 #python3 ./extra/sz.py
 
 while true; do
-    read -p "merge $FEATURE_BRANCH into master? " yn
+    read -p "merge $FEATURE_BRANCH into $MASTER? " yn
     case $yn in
         [Yy]* ) 
-            git checkout master
-            git fetch origin master
-            git merge origin/master
+            git checkout $MASTER
+            git fetch origin $MASTER
+            git merge origin/$MASTER
             git merge --squash $FEATURE_BRANCH
-            git commit -m "$1" -m "$(git log $FEATURE_BRANCH --not master --oneline)"
-            git push origin master
+            git commit -m "$1" -m "$(git log $FEATURE_BRANCH --not $MASTER --oneline)"
+            git push origin $MASTER
             git branch -D $FEATURE_BRANCH && git push origin --delete $FEATURE_BRANCH
             break;;
         [Nn]* ) 

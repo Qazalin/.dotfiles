@@ -16,7 +16,6 @@ return require("packer").startup(function(use)
 	})
 
 	use("mbbill/undotree")
-	use("norcalli/nvim-colorizer.lua")
 
 	use("hrsh7th/nvim-cmp")
 	use("hrsh7th/cmp-buffer")

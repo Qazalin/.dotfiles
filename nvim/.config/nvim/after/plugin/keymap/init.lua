@@ -6,6 +6,7 @@ local xnoremap = Remap.xnoremap
 local nmap = Remap.nmap
 
 nnoremap("<leader>pv", ":Ex<CR>")
+nnoremap("<leader>mv", ":Vex<CR>")
 nnoremap("<leader>u", ":UndotreeShow<CR>")
 
 vnoremap("J", ":m '>+1<CR>gv=gv")
@@ -16,8 +17,6 @@ nnoremap("J", "mzJ`z")
 
 nnoremap("<C-d>", "<C-d>zz")
 nnoremap("<C-u>", "<C-u>zz")
-nnoremap("n", "nzzzv")
-nnoremap("N", "Nzzzv")
 
 -- king of remaps
 xnoremap("<leader>p", '"_dP')
@@ -39,9 +38,6 @@ nnoremap("<C-f>", "<cmd>!tmux neww ~/utils/tmux-sessionfinder.sh<CR>", { silent 
 
 nnoremap("<leader>c", "<cmd>ColorizerToggle<CR>")
 nnoremap("<leader>s", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]])
-
--- because ppl sometimes dont use a standard formatter
-nnoremap("<leader>W", "<cmd>noa w<CR>")
 
 -- write and source curr file
 nnoremap("<leader>w", "<cmd>w<CR><cmd>source %<CR>", { silent = true })

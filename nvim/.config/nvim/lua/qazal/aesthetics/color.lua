@@ -14,4 +14,4 @@ local baleia = require("baleia").setup({})
 local function baleiaColorize()
 	baleia.once(vim.fn.bufnr("%"))
 end
-vim.api.nvim_create_user_command("BaleiaColorize", baleiaColorize, {})
+vim.api.nvim_create_user_command("Color", baleiaColorize, {})

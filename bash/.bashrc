@@ -14,6 +14,7 @@ alias n="vim $HOME/.notes"
 alias m="cat ~/.map | less"
 alias lint="python3 -m ruff check --extend-exclude t.py --extend-exclude ref.py --preview && python3 -m mypy ./tinygrad --strict-equality && python3 -m pylint ./tinygrad"
 alias b="git branch"
+alias bcp="git branch --show-current | tr -d '\n' | pbcopy"
 alias bn="git push origin HEAD:update_benchmark -f"
 alias up="git pull origin master --rebase"
 alias d="git diff master..HEAD"
@@ -33,7 +34,7 @@ alias gmr="git fetch origin master && git merge origin/master --no-edit"
 alias gmc="git merge --continue"
 alias bd="git branch | rg -v 'master' | xargs git branch -D"
 alias differ="$HOME/code/differ/target/release/differ"
-alias dt="differ diff /tmp/k0 /tmp/k1"
+alias dt="difft /tmp/k0 /tmp/k1"
 alias prv="gh pr view --web"
 alias tops="python3 -m pytest test/test_ops.py"
 alias ttops="python3 test/test_ops.py TestOps.test_tiny_add"
@@ -41,7 +42,7 @@ alias python="python3.10"
 
 export PYTHONPATH="."
 export TERM=xterm-256color
-export PATH=$HOME/bin:/usr/local/bin:/opt/homebrew/bin:/opt/homebrew/opt/node@20/bin:$HOME/.cargo/bin:/opt/homebrew/bin/python3.10:$PATH
+export PATH=$HOME/bin:/usr/local/bin:/opt/homebrew/bin:/opt/homebrew/opt/node@20/bin:$HOME/.cargo/bin:/opt/homebrew/bin/python3.10:$HOME/Library/Python/3.9/bin/:$PATH
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash
 
 #if [[ "$(uname)" == "Darwin" ]]; then
@@ -84,3 +85,8 @@ bind -x '"\C-f": "~/utils/tmux-sessionfinder.sh"'
 HISTSIZE=10000
 HISTFILESIZE=20000
 alias t="vim /tmp/k.s"
+
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+. "$HOME/.cargo/env"

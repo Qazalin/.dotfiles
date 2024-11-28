@@ -31,6 +31,7 @@ return require("packer").startup(function(use)
 		opts = {},
 	})
 	use({ "m00qek/baleia.nvim", tag = "v1.4.0" })
+  use("norcalli/nvim-colorizer.lua")
 
 	-- lsp
 	use("neovim/nvim-lspconfig")

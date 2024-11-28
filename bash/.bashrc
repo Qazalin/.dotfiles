@@ -1,6 +1,6 @@
 alias cl="clear"
-alias dev="npm run dev"
-alias vim="$HOME/nvim-macos-arm64/bin/nvim"
+alias vim="nvim"
+alias python3="python3.12"
 alias c="python3 ~/code/box/main.py"
 alias sz="python3 ./extra/sz.py"
 alias ship="~/utils/ship.sh"
@@ -19,31 +19,33 @@ alias bn="git push origin HEAD:update_benchmark -f"
 alias up="git pull origin master --rebase"
 alias d="git diff master..HEAD"
 alias f1="feat f1"
-alias f2="feat f2"
-alias f3="feat f3"
 alias gr="git rebase -i HEAD~2"
 alias gca="git commit --amend"
 alias gcae="git commit --amend --no-edit"
-alias gp="git push origin HEAD --force"
-alias gf="git stash && git checkout reduce_fusor"
+alias gp="git push origin HEAD"
+alias gpp="git push origin HEAD --force"
 alias gm="git checkout master"
 alias gms="git stash && git checkout master"
 alias gl="git log"
-alias gps="git push origin HEAD"
 alias ghr="git fetch origin master && git reset --hard origin/master"
+alias ghrr="git reset --hard origin/$(git rev-parse --abbrev-ref HEAD)"
 alias gmr="git fetch origin master && git merge origin/master --no-edit"
 alias gmc="git merge --continue"
+alias grc="git rebase --continue"
 alias bd="git branch | rg -v 'master' | xargs git branch -D"
-alias differ="$HOME/code/differ/target/release/differ"
-alias dt="difft /tmp/k0 /tmp/k1"
+alias dt="differ diff /tmp/k0 /tmp/k1 | less -R"
+alias dtt="difft /tmp/k0 /tmp/k1"
 alias prv="gh pr view --web"
-alias tops="python3 -m pytest test/test_ops.py"
-alias ttops="python3 test/test_ops.py TestOps.test_tiny_add"
-alias python="python3.10"
+alias tops="PYTHONPATH=. python3 -m pytest test/test_ops.py"
+alias tsops="PYTHONPATH=. python3 -m pytest test/test_schedule.py"
+alias ttops="python3 test/test_tiny.py TestTiny.test_plus"
+alias taops="python3 -m pytest test/test_assign.py"
+alias sf1="git stash && f1"
+alias sm="git stash && git checkout master"
+alias t="python3 t.py"
 
-export PYTHONPATH="."
 export TERM=xterm-256color
-export PATH=$HOME/bin:/usr/local/bin:/opt/homebrew/bin:/opt/homebrew/opt/node@20/bin:$HOME/.cargo/bin:/opt/homebrew/bin/python3.10:$HOME/Library/Python/3.9/bin/:$PATH
+export PATH=$HOME/bin:/usr/local/bin:/opt/homebrew/bin:/opt/homebrew/opt/node@20/bin:$HOME/.cargo/bin:/opt/homebrew/bin/python3.10:$HOME/Library/Python/3.9/bin/:$HOME/nvim-macos-arm64/bin:$PATH
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash
 
 #if [[ "$(uname)" == "Darwin" ]]; then
@@ -57,7 +59,7 @@ export PATH=$HOME/bin:/usr/local/bin:/opt/homebrew/bin:/opt/homebrew/opt/node@20
 
 function g() {
   if [[ "$PWD" == *"/tinygrad"* ]]; then
-    git add ./tinygrad/ && git add ./test && git add ./.github && git add ./extra && git status -v
+    git add ./tinygrad/ && git add ./test && git add ./.github && git add ./extra && git add ./docs && git add ./examples && git add viz/ && git status -v
   else
     git add . && git status -v
   fi
@@ -85,9 +87,8 @@ bind -x '"\C-s": "~/utils/tmux-sessionizer.sh"'
 bind -x '"\C-f": "~/utils/tmux-sessionfinder.sh"'
 HISTSIZE=10000
 HISTFILESIZE=20000
-alias t="vim /tmp/k.s"
 
-export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+# export NVM_DIR="$HOME/.nvm"
+# [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+# [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 . "$HOME/.cargo/env"

@@ -5,3 +5,5 @@
   defaultBranch = master
 [diff]
   external = difft
+[log]
+	date = local

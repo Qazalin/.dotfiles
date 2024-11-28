@@ -73,3 +73,11 @@ vim.api.nvim_create_autocmd("FileType", {
 		vim.opt_local.spelllang = { "en_us" }
 	end,
 })
+
+function vvv()
+	local current_buf = vim.api.nvim_get_current_buf()
+	vim.cmd("Vex")
+	vim.api.nvim_set_current_buf(current_buf)
+	vim.cmd("normal /")
+end
+vim.api.nvim_set_keymap("n", "<C-v>", ":lua vvv()<CR>", { noremap = true, silent = true })

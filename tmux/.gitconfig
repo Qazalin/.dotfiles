@@ -7,3 +7,5 @@
   external = difft
 [log]
 	date = local
+[credential]
+  helper = store

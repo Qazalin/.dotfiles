@@ -1,9 +1,6 @@
 alias cl="clear"
 alias vim="nvim"
-alias python3="python3.12"
-alias c="python3 ~/code/box/main.py"
 alias sz="python3 ./extra/sz.py"
-alias ship="~/utils/ship.sh"
 alias d0="export DEBUG=0 && export NOOPT=0"
 alias d2="export DEBUG=2"
 alias d3="export DEBUG=3"
@@ -11,6 +8,7 @@ alias d4="export NOOPT=1 && export DEBUG=4"
 alias d5="export NOOPT=1 && export DEBUG=5"
 alias opt="export NOOPT=0"
 alias n="vim $HOME/.notes"
+alias ship="$HOME/utils/ship.sh"
 alias m="cat ~/.map | less"
 alias lint="python3 -m ruff check --extend-exclude t.py --extend-exclude ref.py --preview && python3 -m mypy ./tinygrad --strict-equality && python3 -m pylint ./tinygrad"
 alias b="git branch"
@@ -45,7 +43,7 @@ alias sm="git stash && git checkout master"
 alias t="python3 t.py"
 
 export TERM=xterm-256color
-export PATH=$HOME/bin:/usr/local/bin:/opt/homebrew/bin:/opt/homebrew/opt/node@20/bin:$HOME/.cargo/bin:/opt/homebrew/bin/python3.10:$HOME/Library/Python/3.9/bin/:$HOME/nvim-macos-arm64/bin:$PATH
+export PATH=$HOME/bin:/usr/local/bin:/opt/homebrew/bin:/opt/homebrew/opt/node@20/bin:$HOME/.cargo/bin:/opt/homebrew/bin/python3.10:$HOME/Library/Python/3.9/bin/:$HOME/nvim-macos-arm64/bin:$HOME/nvim-linux64/bin:$PATH
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash
 
 #if [[ "$(uname)" == "Darwin" ]]; then
@@ -59,7 +57,7 @@ export PATH=$HOME/bin:/usr/local/bin:/opt/homebrew/bin:/opt/homebrew/opt/node@20
 
 function g() {
   if [[ "$PWD" == *"/tinygrad"* ]]; then
-    git add ./tinygrad/ && git add ./test && git add ./.github && git add ./extra && git add ./docs && git add ./examples && git add viz/ && git status -v
+    git add ./tinygrad/ && git add ./test && git add ./.github && git add ./extra && git add ./docs && git add ./examples && git status -v
   else
     git add . && git status -v
   fi
@@ -69,7 +67,7 @@ function r() {
   # cargo build --release
 }
 function gd() {
-    open https://github.com/tinygrad/tinygrad/compare/master...$(git branch --show-current)
+  open https://github.com/tinygrad/tinygrad/compare/master...$(git branch --show-current)
 }
 
 function start_ssh_agent() {
@@ -91,4 +89,4 @@ HISTFILESIZE=20000
 # export NVM_DIR="$HOME/.nvm"
 # [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 # [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
-. "$HOME/.cargo/env"
+#. "$HOME/.cargo/env"

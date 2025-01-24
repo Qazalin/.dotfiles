@@ -6,7 +6,7 @@ session=$(tmux list-sessions | fzf)
 IFS=":"
 
 read -ra ADDR <<< "$session"
-for i in "${ADDR[@]}"; do   
+for i in "${ADDR[@]}"; do
     args+=("$i")
 done
 

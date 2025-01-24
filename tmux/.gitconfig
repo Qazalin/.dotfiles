@@ -9,3 +9,5 @@
 	date = local
 [credential]
   helper = store
+[core]
+  editor = vim

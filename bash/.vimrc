@@ -17,6 +17,4 @@ set noswapfile
 set nobackup
 
 let mapleader = " "
-nnoremap <C-p> :GFiles<CR>
-nnoremap <Leader>u :UndotreeToggle<CR>
 nnoremap <leader>pv :Ex<CR>

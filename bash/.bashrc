@@ -46,36 +46,9 @@ export TERM=xterm-256color
 export PATH=$HOME/bin:/usr/local/bin:/opt/homebrew/bin:/opt/homebrew/opt/node@20/bin:$HOME/.cargo/bin:/opt/homebrew/bin/python3.10:$HOME/Library/Python/3.9/bin/:$HOME/nvim-macos-arm64/bin:$HOME/nvim-linux64/bin:$PATH
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash
 
-#if [[ "$(uname)" == "Darwin" ]]; then
-# Add the Qt directory to the PATH and CMAKE_PREFIX_PATH
-# export CMAKE_PREFIX_PATH=$CMAKE_PREFIX_PATH:$(brew --prefix qt@5)
-# export PATH=$PATH:$(brew --prefix qt@5)/bin
-# export OPENSSL_ROOT_DIR=/opt/homebrew/opt/openssl@3
-# eval "$(/opt/homebrew/bin/brew shellenv)"
-# export PATH="/Library/Frameworks/Python.framework/Versions/3.10/bin:${PATH}"
-#fi
-
-function g() {
-  if [[ "$PWD" == *"/tinygrad"* ]]; then
-    git add ./tinygrad/ && git add ./test && git add ./.github && git add ./extra && git add ./docs && git add ./examples && git status -v
-  else
-    git add . && git status -v
-  fi
-}
-function r() {
-  eval /Users/qazal/code/remu/extra/run.sh
-  # cargo build --release
-}
+alias g="git add ./tinygrad/ && git add ./test && git add ./.github && git add ./extra && git add ./docs && git add ./examples && git status -v"
 function gd() {
   open https://github.com/tinygrad/tinygrad/compare/master...$(git branch --show-current)
-}
-
-function start_ssh_agent() {
-  ssh-add -l # shows nothing
-  eval "$(ssh-agent -s)"
-  ssh-add ~/.ssh/id_ed25519
-  # shows stuff
-  ssh-add -l
 }
 
 PS1='$(if [[ $? == 0 ]]; then echo "\w"; else echo "\[\e[31m\]\w\[\e[0m\]"; fi)$(git branch 2>/dev/null | grep \* | sed "s/* / (/" | sed "s/$/) /")> '
@@ -85,8 +58,10 @@ bind -x '"\C-s": "~/utils/tmux-sessionizer.sh"'
 bind -x '"\C-f": "~/utils/tmux-sessionfinder.sh"'
 HISTSIZE=10000
 HISTFILESIZE=20000
-
-# export NVM_DIR="$HOME/.nvm"
-# [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-# [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
-#. "$HOME/.cargo/env"
+# path?
+alias python3="python3.11"
+alias pip3="python3.11 -m pip"
+alias pip="python3.11 -m pip"
+alias python="python3.11"
+alias v="export VIZ=1"
+alias vv="export VIZ=0"

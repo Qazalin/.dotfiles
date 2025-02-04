@@ -4,11 +4,11 @@ set relativenumber
 
 set noerrorbells
 
+filetype plugin indent on
 set tabstop=2
-set softtabstop=2
 set shiftwidth=2
 set expandtab
-autocmd FileType python setlocal expandtab tabstop=2 shiftwidth=2 softtabstop=2
+autocmd FileType * setlocal tabstop=2 shiftwidth=2 expandtab
 
 set smartindent
 set wrap

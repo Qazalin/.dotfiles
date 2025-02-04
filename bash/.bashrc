@@ -1,5 +1,4 @@
 alias cl="clear"
-alias vim="$HOME/nvim-macos-arm64/bin/nvim"
 alias d0="export DEBUG=0 && export NOOPT=0"
 alias d2="export DEBUG=2"
 alias d3="export DEBUG=3"

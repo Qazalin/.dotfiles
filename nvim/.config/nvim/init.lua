@@ -9,8 +9,9 @@ vim.opt.tabstop = 2
 vim.opt.softtabstop = 2
 vim.opt.shiftwidth = 2
 vim.opt.expandtab = true
-vim.opt.wrap = true
 vim.api.nvim_command("autocmd FileType python setlocal expandtab tabstop=2 shiftwidth=2 softtabstop=2")
+vim.opt.smartindent = true
+vim.opt.wrap = true
 
 vim.opt.swapfile = false
 vim.opt.backup = false

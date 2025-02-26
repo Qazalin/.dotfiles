@@ -43,7 +43,7 @@ nnoremap <leader>y "+y
 vnoremap <leader>y "+y
 nnoremap <leader>Y gg"+yG
 nnoremap <leader>x :!chmod +x %<CR>
-nnoremap <C-s> :!tmux neww ~/utils/tmux-sessionizer.sh<CR>
-nnoremap <C-f> :!tmux neww ~/utils/tmux-sessionfinder.sh<CR>
+nnoremap <C-s> :!tmux neww ~/tmux-sessionizer.sh<CR>
+nnoremap <C-f> :!tmux neww ~/tmux-sessionfinder.sh<CR>
 nnoremap <leader>s :%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>
 nnoremap <C-p> :GFiles<CR>

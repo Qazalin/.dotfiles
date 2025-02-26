@@ -6,7 +6,7 @@
 [diff]
   external = difft
 [log]
-	date = local
+  date = local
 [credential]
   helper = store
 [core]

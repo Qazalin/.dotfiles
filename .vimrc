@@ -47,3 +47,7 @@ nnoremap <C-s> :!tmux neww ~/tmux-sessionizer.sh<CR>
 nnoremap <C-f> :!tmux neww ~/tmux-sessionfinder.sh<CR>
 nnoremap <leader>s :%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>
 nnoremap <C-p> :GFiles<CR>
+command! -bang -nargs=* Vex execute 'GFiles' <q-args>
+nnoremap <C-h> <C-^>
+inoremap <C-h> <C-^>
+vnoremap <C-h> <C-^>

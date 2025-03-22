@@ -49,3 +49,4 @@ export PATH="/opt/homebrew/bin:$PATH"
 export PATH="/usr/local/sbin:$PATH"
 export PATH="$HOME/.cargo/bin:$PATH"
 export PATH=$PATH:/sbin
+export PATH="/opt/homebrew/opt/llvm/bin:$PATH"

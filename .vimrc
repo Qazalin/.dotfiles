@@ -21,6 +21,7 @@ Plug 'catppuccin/vim', { 'as': 'catppuccin' }
 Plug 'mbbill/undotree'
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
+Plug 'zivyangll/git-blame.vim'
 call plug#end()
 
 syntax on
@@ -51,3 +52,4 @@ command! -bang -nargs=* Vex execute 'GFiles' <q-args>
 nnoremap <C-h> <C-^>
 inoremap <C-h> <C-^>
 vnoremap <C-h> <C-^>
+nnoremap <leader>gb :<C-u>call gitblame#echo()<CR>

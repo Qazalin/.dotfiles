@@ -15,19 +15,11 @@ alias bd="git branch | rg -v 'master' | xargs git branch -D"
 alias up="git pull upstream master --rebase && git push origin master"
 alias d="git diff upstream/master..HEAD"
 alias dt="difft /tmp/k0 /tmp/k1 --color=always | less -R"
-alias prv="gh pr view --web"
 
 alias v="export VIZ=1"
 alias vv="export VIZ=0"
-alias tops="PYTHONPATH=. python -m pytest test/test_ops.py"
 alias ttops="python test/test_tiny.py TestTiny.test_plus"
-alias d0="export DEBUG=0 && export NOOPT=0"
-alias d2="export DEBUG=2"
-alias d3="export DEBUG=3"
-alias d4="export NOOPT=1 && export DEBUG=4"
-alias d5="export NOOPT=1 && export DEBUG=5"
-alias opt="export NOOPT=0"
-alias lint="python -m ruff check --extend-exclude t.py --extend-exclude ref.py --preview && python -m mypy ./tinygrad --strict-equality && python -m pylint ./tinygrad"
+alias tops="PYTHONPATH=. python -m pytest test/test_ops.py"
 alias bn="git push upstream HEAD:update_benchmark -f"
 function gd() {
   eval $(open https://github.com/$(git remote get-url upstream | cut -d':' -f2)/compare/master...qazalin:$(git branch --show-current))
@@ -42,11 +34,4 @@ bind -x '"\C-s": "~/tmux-sessionizer.sh"'
 bind -x '"\C-f": "~/tmux-sessionfinder.sh"'
 HISTSIZE=10000
 HISTFILESIZE=20000
-
-export PATH="$HOME/bin:$PATH"
-export PATH="/usr/local/bin:$PATH"
-export PATH="/opt/homebrew/bin:$PATH"
-export PATH="/usr/local/sbin:$PATH"
-export PATH="$HOME/.cargo/bin:$PATH"
-export PATH=$PATH:/sbin
-export PATH="/opt/homebrew/opt/llvm/bin:$PATH"
+export PATH="$HOME/bin:/usr/local/bin:/opt/homebrew/bin:/usr/local/sbin:$HOME/.cargo/bin:/sbin:/opt/homebrew/opt/llvm/bin:$PATH"

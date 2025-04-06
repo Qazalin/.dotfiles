@@ -5,16 +5,16 @@ set relativenumber
 set noerrorbells
 
 filetype plugin indent on
-set tabstop=2
-set shiftwidth=2
-set expandtab
-autocmd FileType * setlocal tabstop=2 shiftwidth=2 expandtab
+autocmd FileType python setlocal tabstop=2 shiftwidth=2 softtabstop=2 expandtab
+autocmd FileType rust setlocal tabstop=4 shiftwidth=4 softtabstop=4 expandtab
 
 set smartindent
 set wrap
 
 set noswapfile
 set nobackup
+set undofile
+set undodir=~/.vim/undo
 
 call plug#begin()
 Plug 'catppuccin/vim', { 'as': 'catppuccin' }
@@ -31,7 +31,6 @@ set termguicolors
 hi Normal guibg=NONE ctermbg=NONE
 
 let mapleader = " "
-nnoremap <leader>w :source %<CR>
 nnoremap <leader>pv :Ex<CR>
 nnoremap <leader>pv :Ex<CR>
 nnoremap <leader>u :UndotreeShow<CR>
@@ -43,7 +42,7 @@ nnoremap <C-u> <C-u>zz
 nnoremap <leader>y "+y
 vnoremap <leader>y "+y
 nnoremap <leader>Y gg"+yG
-nnoremap <leader>x :!chmod +x %<CR>
+nnoremap <leader>x :silent !chmod +x %<CR>
 nnoremap <C-s> :!tmux neww ~/tmux-sessionizer.sh<CR>
 nnoremap <C-f> :!tmux neww ~/tmux-sessionfinder.sh<CR>
 nnoremap <leader>s :%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>
@@ -53,3 +52,9 @@ nnoremap <C-h> <C-^>
 inoremap <C-h> <C-^>
 vnoremap <C-h> <C-^>
 nnoremap <leader>gb :<C-u>call gitblame#echo()<CR>
+
+nnoremap <silent><leader>o :call OpenInObsidian()<CR>
+function! OpenInObsidian()
+  let l:relpath = substitute(expand('%:p'), expand('~/code/vault/') , '', '')
+  call system('open "'.'obsidian://open?vault=vault&file='.escape(l:relpath,' ').'"')
+endfunction

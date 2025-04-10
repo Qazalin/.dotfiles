@@ -1,4 +1,5 @@
 #!/bin/bash
+
 args=()
 session=$(tmux list-sessions | fzf)
 IFS=":"

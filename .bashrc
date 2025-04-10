@@ -7,23 +7,21 @@ alias grc="git rebase --continue"
 alias gr="git rebase -i HEAD~2"
 alias gp="git push origin HEAD"
 alias gpp="git push origin HEAD --force"
-alias gbc="git branch --show-current | tr -d '\n' | pbcopy"
 alias gca="git commit --amend"
 alias gcae="git commit --amend --no-edit"
 alias b="git branch"
 alias bd="git branch | rg -v 'master' | xargs git branch -D"
-alias up="git pull upstream master --rebase && git push origin master"
+alias up="git pull upstream master --rebase"
 alias d="git diff upstream/master..HEAD"
 alias dt="difft /tmp/k0 /tmp/k1 --color=always | less -R"
-
-alias v="export VIZ=1"
-alias vv="export VIZ=0"
-alias ttops="python test/test_tiny.py TestTiny.test_plus"
-alias tops="PYTHONPATH=. python -m pytest test/test_ops.py"
-alias bn="git push upstream HEAD:update_benchmark -f"
 function gd() {
   eval $(open https://github.com/$(git remote get-url upstream | cut -d':' -f2)/compare/master...qazalin:$(git branch --show-current))
 }
+
+alias ttops="python test/test_tiny.py TestTiny.test_plus"
+alias tops="PYTHONPATH=. python -m pytest test/test_ops.py"
+alias bn="git push upstream HEAD:update_benchmark -f"
+alias lint="python -m ruff check --extend-exclude t.py --extend-exclude ref.py --preview && python -m mypy ./tinygrad --strict-equality && python -m pylint ./tinygrad"
 
 PS1='$(if [[ $? == 0 ]]; then echo "\w"; else echo "\[\e[31m\]\w\[\e[0m\]"; fi)$(git branch 2>/dev/null | grep \* | sed "s/* / (/" | sed "s/$/) /")> '
 

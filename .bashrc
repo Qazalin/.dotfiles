@@ -32,4 +32,4 @@ bind -x '"\C-s": "~/tmux-sessionizer.sh"'
 bind -x '"\C-f": "~/tmux-sessionfinder.sh"'
 HISTSIZE=10000
 HISTFILESIZE=20000
-export PATH="$HOME/bin:/usr/local/bin:/opt/homebrew/bin:/usr/local/sbin:$HOME/.cargo/bin:/sbin:/opt/homebrew/opt/llvm/bin:$PATH"
+export PATH="$HOME/bin:/usr/local/bin:/opt/homebrew/bin:/usr/local/sbin:$HOME/.cargo/bin:/sbin:/opt/homebrew/opt/llvm/bin:/usr/lib/llvm-19/bin/:$PATH"

@@ -1,6 +1,6 @@
 set guicursor=
 set nonu
-set relativenumber
+set number
 
 set noerrorbells
 
@@ -47,14 +47,9 @@ nnoremap <C-s> :!tmux neww ~/tmux-sessionizer.sh<CR>
 nnoremap <C-f> :!tmux neww ~/tmux-sessionfinder.sh<CR>
 nnoremap <leader>s :%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>
 nnoremap <C-p> :GFiles<CR>
+nnoremap <C-e> :Buffers<CR>
 command! -bang -nargs=* Vex execute 'GFiles' <q-args>
 nnoremap <C-h> <C-^>
 inoremap <C-h> <C-^>
 vnoremap <C-h> <C-^>
 nnoremap <leader>gb :<C-u>call gitblame#echo()<CR>
-
-nnoremap <silent><leader>o :call OpenInObsidian()<CR>
-function! OpenInObsidian()
-  let l:relpath = substitute(expand('%:p'), expand('~/code/vault/') , '', '')
-  call system('open "'.'obsidian://open?vault=vault&file='.escape(l:relpath,' ').'"')
-endfunction

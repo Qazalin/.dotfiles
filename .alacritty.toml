@@ -1,0 +1,10 @@
+[window]
+startup_mode = "Fullscreen"
+
+[colors.primary]
+background = "0x000000"
+foreground = "0xffffff"
+
+[font]
+normal = { family = "JetBrains Mono", style = "Regular" }
+size = 24.0

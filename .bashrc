@@ -22,6 +22,7 @@ alias ttops="python test/test_tiny.py TestTiny.test_plus"
 alias tops="PYTHONPATH=. python -m pytest test/test_ops.py"
 alias bn="git push upstream HEAD:update_benchmark -f"
 alias lint="python -m ruff check --extend-exclude t.py --extend-exclude ref.py --preview && python -m mypy ./tinygrad --strict-equality && python -m pylint ./tinygrad"
+export WANDB_MODE=disabled
 
 PS1='$(if [[ $? == 0 ]]; then echo "\w"; else echo "\[\e[31m\]\w\[\e[0m\]"; fi)$(git branch 2>/dev/null | grep \* | sed "s/* / (/" | sed "s/$/) /")> '
 

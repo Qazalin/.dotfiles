@@ -16,6 +16,10 @@ set nobackup
 set undofile
 set undodir=~/.vim/undo
 
+set hlsearch
+set incsearch
+set shortmess-=S
+
 call plug#begin()
 Plug 'catppuccin/vim', { 'as': 'catppuccin' }
 Plug 'mbbill/undotree'

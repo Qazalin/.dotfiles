@@ -3,6 +3,7 @@ set nonu
 set number
 
 set noerrorbells
+set hidden
 
 filetype plugin indent on
 autocmd FileType * setlocal tabstop=2 shiftwidth=2 softtabstop=2 expandtab
@@ -19,6 +20,7 @@ set undodir=~/.vim/undo
 set hlsearch
 set incsearch
 set shortmess-=S
+set ignorecase
 
 call plug#begin()
 Plug 'catppuccin/vim', { 'as': 'catppuccin' }
@@ -56,3 +58,4 @@ nnoremap <C-h> <C-^>
 inoremap <C-h> <C-^>
 vnoremap <C-h> <C-^>
 nnoremap <leader>gb :<C-u>call gitblame#echo()<CR>
+nnoremap <leader>n :nohlsearch<CR>

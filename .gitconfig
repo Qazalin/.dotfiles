@@ -9,3 +9,5 @@
   date = local
 [core]
   editor = vim
+[checkout]
+  defaultRemote = upstream

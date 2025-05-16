@@ -59,3 +59,4 @@ inoremap <C-h> <C-^>
 vnoremap <C-h> <C-^>
 nnoremap <leader>gb :<C-u>call gitblame#echo()<CR>
 nnoremap <leader>n :nohlsearch<CR>
+command! W w

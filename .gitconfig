@@ -3,11 +3,15 @@
   email = qazal.software@gmail.com
 [init]
   defaultBranch = master
-[diff]
-  external = difft
 [log]
   date = local
 [core]
   editor = vim
 [checkout]
   defaultRemote = upstream
+[pager]
+	diff = riff
+	show = riff
+	log = riff
+[interactive]
+	diffFilter = riff --color=on

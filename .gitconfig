@@ -15,3 +15,5 @@
 	log = riff
 [interactive]
 	diffFilter = riff --color=on
+[fetch]
+  prune = true

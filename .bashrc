@@ -1,4 +1,5 @@
 alias g="git add . && git status -v"
+alias gg="git add . && git status -v | riff"
 alias gm="git checkout master"
 alias ghr="git fetch upstream master && git reset --hard upstream/master"
 alias gmr="git fetch upstream master && git merge upstream/master --no-edit"
@@ -19,6 +20,7 @@ alias dt="riff /tmp/k0 /tmp/k1"
 function gd() {
   eval $(open https://github.com/$(git remote get-url upstream | cut -d':' -f2)/compare/master...qazalin:$(git branch --show-current))
 }
+alias c="clear"
 
 function gb() {
   git fetch origin

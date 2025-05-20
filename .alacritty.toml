@@ -7,4 +7,4 @@ foreground = "0xffffff"
 
 [font]
 normal = { family = "JetBrains Mono", style = "Regular" }
-size = 22.0
+size = 18.0

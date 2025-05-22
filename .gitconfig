@@ -10,10 +10,10 @@
 [checkout]
   defaultRemote = upstream
 [pager]
-	diff = riff
-	show = riff
-	log = riff
+  diff = riff
+  show = riff
+  log = riff
 [interactive]
-	diffFilter = riff --color=on
+  diffFilter = riff --color=on
 [fetch]
   prune = true

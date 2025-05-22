@@ -59,4 +59,6 @@ inoremap <C-h> <C-^>
 vnoremap <C-h> <C-^>
 nnoremap <leader>gb :<C-u>call gitblame#echo()<CR>
 nnoremap <leader>n :nohlsearch<CR>
+nnoremap <leader>b <C-v>
+nnoremap <leader>t :e /tmp/t.py<CR>
 command! W w

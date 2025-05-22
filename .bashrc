@@ -34,6 +34,7 @@ alias vtops="PYTHONPATH=. python -m pytest -v test/test_ops.py"
 alias ci="python3 -m pytest -n=auto test/"
 alias bn="git push upstream HEAD:update_benchmark -f"
 alias lint="python -m ruff check --extend-exclude t.py --extend-exclude ref.py --preview && python -m mypy ./tinygrad --strict-equality && python -m pylint ./tinygrad"
+alias t="python /tmp/t.py"
 export WANDB_MODE=disabled
 
 PS1='$(if [[ $? == 0 ]]; then echo "\w"; else echo "\[\e[31m\]\w\[\e[0m\]"; fi)$(git branch 2>/dev/null | grep \* | sed "s/* / (/" | sed "s/$/) /")> '

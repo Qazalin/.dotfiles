@@ -1,5 +1,6 @@
 [window]
 startup_mode = "Fullscreen"
+opacity = 1
 
 [colors.primary]
 background = "0x000000"

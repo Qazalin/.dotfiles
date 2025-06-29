@@ -31,10 +31,20 @@ export WANDB_MODE=disabled
 PS1='$(if [[ $? == 0 ]]; then echo "\w"; else echo "\[\e[31m\]\w\[\e[0m\]"; fi)$(git branch 2>/dev/null | grep \* | sed "s/* / (/" | sed "s/$/) /")> '
 
 export TERM=xterm-256color
-[ -f ~/.fzf.bash ] && source ~/.fzf.bash
 stty -ixon
 bind -x '"\C-s": "~/tmux-sessionizer.sh"'
 bind -x '"\C-f": "~/tmux-sessionfinder.sh"'
 HISTSIZE=10000
 HISTFILESIZE=20000
-export PATH="$HOME/bin:/usr/local/bin:/opt/homebrew/bin:/usr/local/sbin:$HOME/.cargo/bin:/sbin:/opt/homebrew/opt/llvm/bin:/usr/lib/llvm-19/bin/:/opt/homebrew/opt/python@3.13/libexec/bin:/opt/homebrew/opt/llvm@19/bin:$HOME/go/bin:$PATH"
+export PATH="$HOME/bin:/usr/local/bin:/opt/homebrew/bin:/usr/local/sbin:$HOME/.cargo/bin:/sbin:/opt/homebrew/opt/llvm/bin:/usr/lib/llvm-19/bin/:/opt/homebrew/opt/python@3.13/libexec/bin:/opt/homebrew/opt/llvm@19/bin:$HOME/go/bin:$HOME/.fzf/bin:$PATH"
+
+fzf_search_history() {
+  local found
+  found=$(HISTTIMEFORMAT= history | fzf +s --tac --height 20% | sed 's/ *[0-9]* *//')
+  if [[ -n $found ]]; then
+    echo $found
+    eval "$found"
+    history -s "$found"
+  fi
+}
+bind -x '"\C-r": fzf_search_history'

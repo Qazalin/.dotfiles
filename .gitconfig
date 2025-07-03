@@ -9,12 +9,6 @@
   editor = vim
 [checkout]
   defaultRemote = upstream
-[pager]
-  diff = riff
-  show = riff
-  log = riff
-[interactive]
-  diffFilter = riff --color=on
 [fetch]
   prune = true
 [alias]

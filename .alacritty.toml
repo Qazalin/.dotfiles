@@ -1,5 +1,6 @@
 [window]
-opacity = 0.8
+startup_mode = "SimpleFullscreen"
+opacity = 0.9
 
 [colors.primary]
 background = "0x000000"

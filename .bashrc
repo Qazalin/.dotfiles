@@ -2,6 +2,7 @@ alias g="git add . && git status -v"
 alias gg="git add . && git status -v | riff"
 alias gm="git checkout master"
 alias ghr="git fetch upstream master && git reset --hard upstream/master"
+alias sghr="git fetch upstream master && git ls-tree -r --name-only upstream/master tinygrad/ | xargs -n1 git checkout upstream/master --"
 alias gmr="git fetch upstream master && git merge upstream/master --no-edit"
 alias gmc="git merge --continue"
 alias grc="git rebase --continue"
@@ -17,6 +18,7 @@ alias bd="git branch | rg -v 'master' | xargs git branch -D"
 alias up="git pull upstream master --rebase"
 alias d="git diff upstream/master..HEAD"
 alias dt="riff /tmp/k0 /tmp/k1"
+alias iso="printf '%s ' \"\$(date +'%Y-%m-%dT%H:%M:%S%z' | sed -E 's/([0-9]{2})([0-9]{2})$/\1:\2/')\" | pbcopy"
 function gd() {
   eval $(open https://github.com/$(git remote get-url upstream | cut -d':' -f2)/compare/master...qazalin:$(git branch --show-current))
 }
@@ -25,7 +27,7 @@ alias ttops="python test/test_tiny.py TestTiny.test_plus"
 alias tops="PYTHONPATH=. python -m pytest test/test_ops.py"
 alias ci="python3 -m pytest -n=auto test/"
 alias bn="git push upstream HEAD:update_benchmark -f"
-alias lint="python -m ruff check --extend-exclude t.py --extend-exclude ref.py --preview && python -m mypy ./tinygrad --strict-equality && python -m pylint ./tinygrad"
+alias lint="python -m ruff check --extend-exclude t.py --extend-exclude ref.py --preview && python -m mypy ./tinygrad && python -m pylint ./tinygrad"
 export WANDB_MODE=disabled
 
 PS1='$(if [[ $? == 0 ]]; then echo "\w"; else echo "\[\e[31m\]\w\[\e[0m\]"; fi)$(git branch 2>/dev/null | grep \* | sed "s/* / (/" | sed "s/$/) /")> '

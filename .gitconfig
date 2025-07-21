@@ -17,3 +17,4 @@
     git reflog expire --expire=now --all && \
     git gc --prune=now --aggressive; \
   }; f"
+  files = "!git diff HEAD..upstream/master --numstat"

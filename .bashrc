@@ -16,7 +16,7 @@ alias gcae="git commit --amend --no-edit"
 alias b="git branch"
 alias bd="git branch | rg -v 'master' | xargs git branch -D"
 alias up="git pull upstream master --rebase"
-alias d="git diff upstream/master..HEAD"
+alias d="git diff upstream/master..HEAD | riff"
 alias dt="riff /tmp/k0 /tmp/k1"
 alias iso="printf '%s ' \"\$(date +'%Y-%m-%dT%H:%M:%S%z' | sed -E 's/([0-9]{2})([0-9]{2})$/\1:\2/')\" | pbcopy"
 function gd() {

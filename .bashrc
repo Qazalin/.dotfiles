@@ -42,11 +42,12 @@ export PATH="$HOME/bin:/usr/local/bin:/opt/homebrew/bin:/usr/local/sbin:$HOME/.c
 
 fzf_search_history() {
   local found
-  found=$(HISTTIMEFORMAT= history | fzf +s --tac --height 20% | sed 's/ *[0-9]* *//')
+  found=$(HISTTIMEFORMAT=; history | awk '{sub(/^[[:space:]]*[0-9]+[[:space:]]*/,""); gsub(/^[[:space:]]+|[[:space:]]+$/,""); gsub(/[[:space:]]+/," "); lines[++n]=$0} END {for(i=n;i>=1;i--) if(!seen[lines[i]]++) print lines[i]}' | fzf -e +s --height 20%)
   if [[ -n $found ]]; then
-    echo $found
-    eval "$found"
-    history -s "$found"
+    READLINE_LINE=$found
+    READLINE_POINT=0x7fffffff
   fi
 }
 bind -x '"\C-r": fzf_search_history'
+bind -m vi-command -x '"\C-r": fzf_search_history'
+bind -m vi-insert -x '"\C-r": fzf_search_history'

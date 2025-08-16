@@ -2,7 +2,7 @@ alias g="git add . && git status -v"
 alias gg="git add . && git status -v | riff"
 alias gm="git checkout master"
 alias ghr="git fetch upstream master && git reset --hard upstream/master"
-alias sghr="git fetch upstream master && git ls-tree -r --name-only upstream/master tinygrad/ | xargs -n1 git checkout upstream/master --"
+alias sghr="git read-tree --reset -u upstream/master"
 alias gmr="git fetch upstream master && git merge upstream/master --no-edit"
 alias gmc="git merge --continue"
 alias grc="git rebase --continue"
@@ -38,7 +38,7 @@ bind -x '"\C-s": "~/tmux-sessionizer.sh"'
 bind -x '"\C-f": "~/tmux-sessionfinder.sh"'
 HISTSIZE=10000
 HISTFILESIZE=20000
-export PATH="$HOME/bin:/usr/local/bin:/opt/homebrew/bin:/usr/local/sbin:$HOME/.cargo/bin:/sbin:/opt/homebrew/opt/llvm/bin:/usr/lib/llvm-19/bin/:/opt/homebrew/opt/python@3.13/libexec/bin:/opt/homebrew/opt/llvm@19/bin:$HOME/go/bin:$HOME/.fzf/bin:$PATH"
+export PATH="$HOME/bin:/usr/local/bin:/opt/homebrew/bin:/usr/local/sbin:$HOME/.cargo/bin:/sbin:/opt/homebrew/opt/llvm/bin:/usr/lib/llvm-19/bin/:/opt/homebrew/opt/python@3.13/libexec/bin:/opt/homebrew/opt/llvm@19/bin:$HOME/go/bin:$HOME/.fzf/bin:$HOME/code/kernel/bin:$PATH"
 
 fzf_search_history() {
   local found

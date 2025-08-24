@@ -32,7 +32,8 @@ export WANDB_MODE=disabled
 
 PS1='$(if [[ $? == 0 ]]; then echo "\w"; else echo "\[\e[31m\]\w\[\e[0m\]"; fi)$(git branch 2>/dev/null | grep \* | sed "s/* / (/" | sed "s/$/) /")> '
 
-export TERM=xterm-256color
+export TERM=tmux-256color
+export COLORTERM=truecolor
 stty -ixon
 bind -x '"\C-s": "~/tmux-sessionizer.sh"'
 bind -x '"\C-f": "~/tmux-sessionfinder.sh"'

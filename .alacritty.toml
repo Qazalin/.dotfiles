@@ -12,7 +12,3 @@ size = 14.0
 
 [env]
 TERM = "tmux-256color"
-
-[terminal.shell]
-program = "/usr/bin/env"
-args = ["bash", "-l"]

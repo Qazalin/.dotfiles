@@ -12,9 +12,4 @@
 [fetch]
   prune = true
 [alias]
-  destory = "!f() { \
-    [ -d .git ] || { echo \"Not a Git repo\" >&2; exit 1; }; \
-    git reflog expire --expire=now --all && \
-    git gc --prune=now --aggressive; \
-  }; f"
   files = "!git diff HEAD..upstream/master --numstat"

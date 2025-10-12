@@ -52,7 +52,6 @@ nnoremap <silent> <C-s> <Cmd>!tmux neww ~/tmux-sessionizer.sh<CR><Cmd>redraw!<CR
 nnoremap <silent> <C-f> <Cmd>!tmux neww ~/tmux-sessionfinder.sh<CR><Cmd>redraw!<CR>
 nnoremap <leader>s :%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>
 nnoremap <C-p> :GFiles<CR>
-nnoremap <C-e> :Buffers<CR>
 command! -bang -nargs=* Vex execute 'GFiles' <q-args>
 nnoremap <C-h> <C-^>
 inoremap <C-h> <C-^>
@@ -60,5 +59,4 @@ vnoremap <C-h> <C-^>
 nnoremap <leader>gb :<C-u>call gitblame#echo()<CR>
 nnoremap <leader>n :nohlsearch<CR>
 nnoremap <leader>b <C-v>
-nnoremap <leader>t :e /tmp/t.py<CR>
 command! W w

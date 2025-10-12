@@ -8,12 +8,10 @@ alias gmc="git merge --continue"
 alias grc="git rebase --continue"
 alias gr="git rebase -i HEAD~2"
 alias gs="git status"
-alias gl="git log --oneline master..HEAD"
 alias gp="git push origin HEAD"
 alias gpp="git push origin HEAD --force"
 alias gca="git commit --amend"
 alias gcae="git commit --amend --no-edit"
-alias b="git branch"
 alias bd="git branch | rg -v 'master' | xargs git branch -D"
 alias up="git pull upstream master --rebase"
 alias d="git diff upstream/master..HEAD | riff"
@@ -24,11 +22,8 @@ function gd() {
 }
 
 alias ttops="python test/test_tiny.py TestTiny.test_plus"
-alias tops="PYTHONPATH=. python -m pytest test/test_ops.py"
-alias ci="python3 -m pytest -n=auto test/"
 alias bn="git push upstream HEAD:update_benchmark -f"
 alias lint="python -m ruff check --extend-exclude t.py --extend-exclude ref.py --preview && python -m mypy ./tinygrad && python -m pylint ./tinygrad"
-export WANDB_MODE=disabled
 
 PS1='$(if [[ $? == 0 ]]; then echo "\w"; else echo "\[\e[31m\]\w\[\e[0m\]"; fi)$(git branch 2>/dev/null | grep \* | sed "s/* / (/" | sed "s/$/) /")> '
 
@@ -39,8 +34,7 @@ bind -x '"\C-s": "~/tmux-sessionizer.sh"'
 bind -x '"\C-f": "~/tmux-sessionfinder.sh"'
 HISTSIZE=10000
 HISTFILESIZE=20000
-export PATH="$HOME/bin:/usr/local/bin:/opt/homebrew/bin:/usr/local/sbin:$HOME/.cargo/bin:/sbin:/opt/homebrew/opt/llvm/bin:/usr/lib/llvm/bin/:/opt/homebrew/opt/python/libexec/bin:$HOME/.fzf/bin:$HOME/code/kernel/bin::$PATH"
-export PATH="/opt/homebrew/opt/gnu-sed/libexec/gnubin:$PATH"
+export PATH="$HOME/bin:/usr/local/bin:/opt/homebrew/bin:/usr/local/sbin:$HOME/.cargo/bin:/sbin:/opt/homebrew/opt/llvm/bin:/usr/lib/llvm/bin/:/opt/homebrew/opt/python/libexec/bin:$HOME/.fzf/bin:$HOME/code/kernel/bin:/opt/homebrew/opt/gnu-sed/libexec/gnubin:$PATH"
 
 export BASH_SILENCE_DEPRECATION_WARNING=1
 

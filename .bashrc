@@ -39,7 +39,8 @@ bind -x '"\C-s": "~/tmux-sessionizer.sh"'
 bind -x '"\C-f": "~/tmux-sessionfinder.sh"'
 HISTSIZE=10000
 HISTFILESIZE=20000
-export PATH="$HOME/bin:/usr/local/bin:/opt/homebrew/bin:/usr/local/sbin:$HOME/.cargo/bin:/sbin:/opt/homebrew/opt/llvm/bin:/usr/lib/llvm/bin/:/opt/homebrew/opt/python/libexec/bin:$HOME/.fzf/bin:$HOME/code/kernel/bin:$PATH"
+export PATH="$HOME/bin:/usr/local/bin:/opt/homebrew/bin:/usr/local/sbin:$HOME/.cargo/bin:/sbin:/opt/homebrew/opt/llvm/bin:/usr/lib/llvm/bin/:/opt/homebrew/opt/python/libexec/bin:$HOME/.fzf/bin:$HOME/code/kernel/bin::$PATH"
+export PATH="/opt/homebrew/opt/gnu-sed/libexec/gnubin:$PATH"
 
 export BASH_SILENCE_DEPRECATION_WARNING=1
 

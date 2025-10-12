@@ -1,4 +1,5 @@
 alias g="git add . && git status -v"
+alias b="git branch"
 alias gg="git add . && git status -v | riff"
 alias gm="git checkout master"
 alias ghr="git fetch upstream master && git reset --hard upstream/master"

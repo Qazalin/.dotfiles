@@ -1,4 +1,5 @@
 alias g="git add . && git status -v"
+alias b="git branch"
 alias gg="git add . && git status -v | riff"
 alias gm="git checkout master"
 alias ghr="git fetch upstream master && git reset --hard upstream/master"
@@ -23,7 +24,7 @@ function gd() {
 
 alias ttops="python test/test_tiny.py TestTiny.test_plus"
 alias bn="git push upstream HEAD:update_benchmark -f"
-alias lint="python -m ruff check --extend-exclude t.py --extend-exclude ref.py --preview && python -m mypy ./tinygrad && python -m pylint ./tinygrad"
+alias lint="python -m ruff check --extend-exclude t.py --extend-exclude ref.py --preview && python -m mypy ./tinygrad"
 
 PS1='$(if [[ $? == 0 ]]; then echo "\w"; else echo "\[\e[31m\]\w\[\e[0m\]"; fi)$(git branch 2>/dev/null | grep \* | sed "s/* / (/" | sed "s/$/) /")> '
 
@@ -34,7 +35,7 @@ bind -x '"\C-s": "~/tmux-sessionizer.sh"'
 bind -x '"\C-f": "~/tmux-sessionfinder.sh"'
 HISTSIZE=10000
 HISTFILESIZE=20000
-export PATH="$HOME/bin:/usr/local/bin:/opt/homebrew/bin:/usr/local/sbin:$HOME/.cargo/bin:/sbin:/opt/homebrew/opt/llvm/bin:/usr/lib/llvm/bin/:/opt/homebrew/opt/python/libexec/bin:$HOME/.fzf/bin:$HOME/code/kernel/bin:/opt/homebrew/opt/gnu-sed/libexec/gnubin:$PATH"
+export PATH="$HOME/bin:/usr/local/bin:/opt/homebrew/bin:/usr/local/sbin:$HOME/.cargo/bin:/sbin:/opt/homebrew/opt/llvm@20/bin:/usr/lib/llvm/bin/:$HOME/.fzf/bin:$HOME/code/kernel/bin:/opt/homebrew/opt/gnu-sed/libexec/gnubin:$PATH"
 
 export BASH_SILENCE_DEPRECATION_WARNING=1
 

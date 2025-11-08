@@ -12,3 +12,6 @@ size = 14.0
 
 [env]
 TERM = "tmux-256color"
+
+[mouse]
+hide_when_typing = true

@@ -20,6 +20,7 @@ set hlsearch
 set incsearch
 set shortmess-=S
 set ignorecase
+set laststatus=0
 
 call plug#begin()
 Plug 'catppuccin/vim', { 'as': 'catppuccin' }

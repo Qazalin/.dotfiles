@@ -47,7 +47,6 @@ nnoremap <C-d> <C-d>zz
 nnoremap <C-u> <C-u>zz
 nnoremap <leader>y "+y
 vnoremap <leader>y "+y
-nnoremap <leader>Y gg"+yG
 nnoremap <silent> <C-s> <Cmd>!tmux neww ~/tmux-sessionizer.sh<CR><Cmd>redraw!<CR>
 nnoremap <silent> <C-f> <Cmd>!tmux neww ~/tmux-sessionfinder.sh<CR><Cmd>redraw!<CR>
 nnoremap <leader>s :%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>

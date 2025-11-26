@@ -9,3 +9,5 @@ git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf && ~/.fzf/install
 mkdir -p ~/.vim/undo
 
 [[ $(uname -s) == Darwin ]] && brew install bash vim riff
+
+vim -es -u "$HOME/.vimrc" +'PlugInstall --sync' +qa </dev/null >/dev/null 2>&1

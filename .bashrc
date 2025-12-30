@@ -1,3 +1,4 @@
+[[ $- != *i* ]] && return
 alias g="git add . && git status -v"
 alias b="git branch"
 alias gg="git add . && git status -v | riff"

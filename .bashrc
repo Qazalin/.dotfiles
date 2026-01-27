@@ -36,7 +36,7 @@ HISTSIZE=10000
 HISTFILESIZE=20000
 shopt -s histappend
 PROMPT_COMMAND='history -a; history -n; '"$PROMPT_COMMAND"
-export PATH="$HOME/bin:/usr/local/bin:/opt/homebrew/bin:/usr/local/sbin:$HOME/.cargo/bin:/sbin:/opt/homebrew/opt/llvm@21/bin:/usr/lib/llvm/bin/:$HOME/.fzf/bin:$HOME/code/kernel/bin:/opt/homebrew/opt/gnu-sed/libexec/gnubin:/opt/homebrew/opt/python@3.12/libexec/bin:$HOME/.local/bin:$PATH"
+PATH="/opt/homebrew/opt/python@3.12/libexec/bin:$HOME/bin:/usr/local/bin:/opt/homebrew/bin:/usr/local/sbin:$HOME/.cargo/bin:/sbin:/opt/homebrew/opt/llvm@21/bin:/usr/lib/llvm/bin/:$HOME/.fzf/bin:$HOME/code/kernel/bin:/opt/homebrew/opt/gnu-sed/libexec/gnubin:$HOME/.local/bin:$PATH"
 
 export BASH_SILENCE_DEPRECATION_WARNING=1
 

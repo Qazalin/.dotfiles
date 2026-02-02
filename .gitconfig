@@ -7,6 +7,7 @@
   date = local
 [core]
   editor = vim
+  pager = less -FRSX
 [checkout]
   defaultRemote = upstream
 [fetch]

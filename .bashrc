@@ -51,3 +51,15 @@ fzf_search_history() {
 bind -x '"\C-r": fzf_search_history'
 bind -m vi-command -x '"\C-r": fzf_search_history'
 bind -m vi-insert -x '"\C-r": fzf_search_history'
+
+wt() {
+  local b="$1"
+  local base="${2:-upstream/master}"
+  local dir="../wt-$b"
+  if [ -z "$b" ]; then
+    echo "usage: wt <branch> [base]"
+    return 1
+  fi
+  git worktree add -b "$b" "$dir" "$base" || return 1
+  cd "$dir" || return 1
+}

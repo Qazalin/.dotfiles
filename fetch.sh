@@ -11,3 +11,5 @@ mkdir -p ~/.vim/undo
 [[ $(uname -s) == Darwin ]] && brew install bash vim riff
 
 vim -es -u "$HOME/.vimrc" +'PlugInstall --sync' +qa </dev/null >/dev/null 2>&1
+
+[[ $(uname -s) == Linux && $(uname -m) == x86_64 ]] && curl -fsSL https://github.com/walles/riff/releases/download/3.6.1/riff-3.6.1-x86_64-linux | install -m 0755 /dev/stdin "$HOME/.local/bin/riff"

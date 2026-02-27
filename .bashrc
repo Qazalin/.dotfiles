@@ -1,5 +1,5 @@
 [[ $- != *i* ]] && return
-alias g="git add . && git status -v"
+alias g="git add . && git status -v && git diff --stat upstream/master...HEAD"
 alias b="git branch"
 alias gg="git add . && git status -v | riff"
 alias gm="git checkout master"

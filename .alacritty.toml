@@ -1,5 +1,6 @@
 [window]
-startup_mode = "SimpleFullscreen"
+startup_mode = "Maximized"
+decorations = "Buttonless"
 opacity = 0.8
 
 [colors.primary]

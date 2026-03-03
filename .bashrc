@@ -61,5 +61,6 @@ wt() {
     return 1
   fi
   git worktree add -b "$b" "$dir" "$base" || return 1
+  cp -R ./.claude "$dir"
   cd "$dir" || return 1
 }

@@ -50,8 +50,10 @@ vnoremap <leader>y "+y
 nnoremap <silent> <C-s> <Cmd>!tmux neww ~/tmux-sessionizer.sh<CR><Cmd>redraw!<CR>
 nnoremap <silent> <C-f> <Cmd>!tmux neww ~/tmux-sessionfinder.sh<CR><Cmd>redraw!<CR>
 nnoremap <leader>s :%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>
-nnoremap <C-p> :GFiles<CR>
-command! -bang -nargs=* Vex execute 'GFiles' <q-args>
+let g:search_dir = ["build", "sys"]
+command! -bang GFilesPlus call fzf#run(fzf#wrap({"source": "git ls-files && find " . join(g:search_dir, " ") . " -type f 2>/dev/null"}))
+nnoremap <C-p> :GFilesPlus<CR>
+command! -bang -nargs=* Vex execute 'GFilesPlus' <q-args>
 nnoremap <C-h> <C-^>
 inoremap <C-h> <C-^>
 vnoremap <C-h> <C-^>

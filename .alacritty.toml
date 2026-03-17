@@ -1,6 +1,5 @@
 [window]
-startup_mode = "Maximized"
-decorations = "Buttonless"
+startup_mode = "SimpleFullscreen"
 opacity = 0.8
 
 [colors.primary]
@@ -16,3 +15,8 @@ TERM = "tmux-256color"
 
 [mouse]
 hide_when_typing = true
+
+[keyboard]
+bindings = [
+  { key = "T", mods = "Command", action = "SpawnNewInstance" }
+]

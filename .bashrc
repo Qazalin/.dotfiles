@@ -16,14 +16,9 @@ alias bd="git branch | rg -v 'master' | xargs git branch -D"
 alias up="git pull upstream master --rebase"
 alias d="git diff upstream/master..HEAD | riff"
 alias dt="riff /tmp/k0 /tmp/k1"
-alias iso="printf '%s ' \"\$(date +'%Y-%m-%dT%H:%M:%S%z' | sed -E 's/([0-9]{2})([0-9]{2})$/\1:\2/')\" | pbcopy"
 function gd() {
   eval $(open https://github.com/$(git remote get-url upstream | cut -d':' -f2)/compare/master...qazalin:$(git branch --show-current))
 }
-
-alias ttops="python test/test_tiny.py TestTiny.test_plus"
-alias bn="git push upstream HEAD:update_benchmark -f"
-alias lint="python -m ruff check --extend-exclude t.py --extend-exclude ref.py --preview && python -m mypy ./tinygrad"
 
 PS1='$(if [[ $? == 0 ]]; then echo "\w"; else echo "\[\e[31m\]\w\[\e[0m\]"; fi)$(git branch 2>/dev/null | grep \* | sed "s/* / (/" | sed "s/$/) /")> '
 
@@ -51,16 +46,3 @@ fzf_search_history() {
 bind -x '"\C-r": fzf_search_history'
 bind -m vi-command -x '"\C-r": fzf_search_history'
 bind -m vi-insert -x '"\C-r": fzf_search_history'
-
-wt() {
-  local b="$1"
-  local base="${2:-upstream/master}"
-  local dir="../wt-$b"
-  if [ -z "$b" ]; then
-    echo "usage: wt <branch> [base]"
-    return 1
-  fi
-  git worktree add -b "$b" "$dir" "$base" || return 1
-  cp -R ./.claude "$dir"
-  cd "$dir" || return 1
-}

@@ -14,3 +14,5 @@
   prune = true
 [alias]
   files = "!git diff HEAD..upstream/master --numstat"
+[credential]
+  username = qazalin

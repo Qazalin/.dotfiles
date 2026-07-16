@@ -20,3 +20,7 @@ hide_when_typing = true
 bindings = [
   { key = "T", mods = "Command", action = "SpawnNewInstance" }
 ]
+
+[colors.selection]
+text = "CellForeground"
+background = "#3b4252"

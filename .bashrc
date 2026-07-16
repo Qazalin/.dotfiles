@@ -1,4 +1,5 @@
-[[ $- != *i* ]] && return
+shopt -s expand_aliases
+
 alias g="git add . && git status -v && git diff --stat upstream/master...HEAD"
 alias b="git branch"
 alias gg="git add . && git status -v | riff"
@@ -20,6 +21,12 @@ function gd() {
   eval $(open https://github.com/$(git remote get-url upstream | cut -d':' -f2)/compare/master...qazalin:$(git branch --show-current))
 }
 
+PATH="/opt/homebrew/sbin:/opt/homebrew/opt/python@3.12/libexec/bin:$HOME/bin:/usr/local/bin:/opt/homebrew/bin:/usr/local/sbin:$HOME/.cargo/bin:/sbin:/opt/homebrew/opt/llvm@21/bin:/usr/lib/llvm/bin/:$HOME/.fzf/bin:$HOME/code/kernel/bin:/opt/homebrew/opt/gnu-sed/libexec/gnubin:$HOME/.local/bin:$HOME/.opencode/bin:$PATH"
+
+export BASH_SILENCE_DEPRECATION_WARNING=1
+
+[[ $- != *i* ]] && return
+
 PS1='$(if [[ $? == 0 ]]; then echo "\w"; else echo "\[\e[31m\]\w\[\e[0m\]"; fi)$(git branch 2>/dev/null | grep \* | sed "s/* / (/" | sed "s/$/) /")> '
 
 export TERM=tmux-256color
@@ -31,9 +38,6 @@ HISTSIZE=10000
 HISTFILESIZE=20000
 shopt -s histappend
 PROMPT_COMMAND='history -a; history -n; '"$PROMPT_COMMAND"
-PATH="/opt/homebrew/sbin:/opt/homebrew/opt/python@3.12/libexec/bin:$HOME/bin:/usr/local/bin:/opt/homebrew/bin:/usr/local/sbin:$HOME/.cargo/bin:/sbin:/opt/homebrew/opt/llvm@21/bin:/usr/lib/llvm/bin/:$HOME/.fzf/bin:$HOME/code/kernel/bin:/opt/homebrew/opt/gnu-sed/libexec/gnubin:$HOME/.local/bin:$HOME/.opencode/bin:$PATH"
-
-export BASH_SILENCE_DEPRECATION_WARNING=1
 
 fzf_search_history() {
   local found

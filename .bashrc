@@ -17,8 +17,9 @@ alias bd="git branch | rg -v 'master' | xargs git branch -D"
 alias up="git pull upstream master --rebase"
 alias d="git diff upstream/master..HEAD | riff"
 alias dt="riff /tmp/k0 /tmp/k1"
-function gd() {
-  eval $(open https://github.com/$(git remote get-url upstream | cut -d':' -f2)/compare/master...qazalin:$(git branch --show-current))
+gd() {
+  url="https://github.com/$(git remote get-url upstream | cut -d':' -f2)/compare/master...qazalin:$(git branch --show-current)"
+  if command -v open >/dev/null; then open "$url"; else echo "$url"; fi
 }
 
 PATH="/opt/homebrew/sbin:/opt/homebrew/opt/python@3.12/libexec/bin:$HOME/bin:/usr/local/bin:/opt/homebrew/bin:/usr/local/sbin:$HOME/.cargo/bin:/sbin:/opt/homebrew/opt/llvm@21/bin:/usr/lib/llvm/bin/:$HOME/.fzf/bin:$HOME/code/kernel/bin:/opt/homebrew/opt/gnu-sed/libexec/gnubin:$HOME/.local/bin:$HOME/.opencode/bin:$PATH"

@@ -1,6 +1,6 @@
 shopt -s expand_aliases
 
-alias g="git add . && git status -v && git diff --stat=,,10 upstream/master...HEAD"
+g() { git add . && git status -v && git diff --stat=,,10 upstream/master...HEAD; }
 alias b="git branch"
 alias gg="git add . && git status -v | riff"
 alias gm="git checkout master"

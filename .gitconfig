@@ -16,3 +16,7 @@
   files = "!git diff HEAD..upstream/master --numstat"
 [credential]
   username = qazalin
+[credential "https://github.com"]
+	helper = !/usr/bin/gh auth git-credential
+[credential "https://gist.github.com"]
+	helper = !/usr/bin/gh auth git-credential

@@ -18,8 +18,9 @@ alias up="git pull upstream master --rebase"
 alias d="git diff upstream/master..HEAD | riff"
 alias dt="riff /tmp/k0 /tmp/k1"
 gd() {
-  url="https://github.com/$(git remote get-url upstream | cut -d':' -f2)/compare/master...qazalin:$(git branch --show-current)"
-  if command -v open >/dev/null; then open "$url"; else echo "$url"; fi
+  repo="$(git remote get-url upstream | sed -E 's#^(git@github.com:|https://github.com/)##; s#\.git$##')"
+  url="https://github.com/$repo/compare/master...qazalin:$(git branch --show-current)"
+  if [ "$(uname)" = "Darwin" ]; then open "$url"; else echo "$url"; fi
 }
 
 PATH="/opt/homebrew/sbin:/opt/homebrew/opt/python@3.12/libexec/bin:$HOME/bin:/usr/local/bin:/opt/homebrew/bin:/usr/local/sbin:$HOME/.cargo/bin:/sbin:/opt/homebrew/opt/llvm@21/bin:/usr/lib/llvm/bin/:$HOME/.fzf/bin:$HOME/code/kernel/bin:/opt/homebrew/opt/gnu-sed/libexec/gnubin:$HOME/.local/bin:$HOME/.opencode/bin:$PATH"

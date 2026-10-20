@@ -23,7 +23,7 @@ gd() {
   if [ "$(uname)" = "Darwin" ]; then open "$url"; else echo "$url"; fi
 }
 
-PATH="/opt/homebrew/sbin:/opt/homebrew/opt/python@3.12/libexec/bin:$HOME/bin:/usr/local/bin:/opt/homebrew/bin:/usr/local/sbin:$HOME/.cargo/bin:/sbin:/opt/homebrew/opt/llvm@21/bin:/usr/lib/llvm/bin/:$HOME/.fzf/bin:$HOME/code/kernel/bin:/opt/homebrew/opt/gnu-sed/libexec/gnubin:$HOME/.local/bin:$HOME/.opencode/bin:$PATH"
+PATH="/opt/homebrew/sbin:/opt/homebrew/opt/python@3.14/libexec/bin:$HOME/bin:/usr/local/bin:/opt/homebrew/bin:/usr/local/sbin:$HOME/.cargo/bin:/sbin:/opt/homebrew/opt/llvm@21/bin:/usr/lib/llvm/bin/:$HOME/.fzf/bin:$HOME/code/kernel/bin:/opt/homebrew/opt/gnu-sed/libexec/gnubin:$HOME/.local/bin:$HOME/.opencode/bin:$PATH"
 
 export BASH_SILENCE_DEPRECATION_WARNING=1
 
@@ -37,13 +37,18 @@ stty -ixon
 bind -x '"\C-s": "~/tmux-sessionizer.sh"'
 bind -x '"\C-f": "~/tmux-sessionfinder.sh"'
 HISTSIZE=10000
-HISTFILESIZE=20000
+unset HISTFILESIZE
+HISTTIMEFORMAT='%F %T '
 shopt -s histappend
 PROMPT_COMMAND='history -a; history -n; '"$PROMPT_COMMAND"
 
+cpc() {
+  tail -n 1 -- "$HISTFILE" | awk '{ printf "%s", $0 }' | pbcopy
+}
+
 fzf_search_history() {
   local found
-  found=$(cat $HISTFILE | awk '{sub(/^[[:space:]]*[0-9]+[[:space:]]*/,""); gsub(/^[[:space:]]+|[[:space:]]+$/,""); gsub(/[[:space:]]+/," "); lines[++n]=$0} END {for(i=n;i>=1;i--) if(!seen[lines[i]]++) print lines[i]}' | fzf -e +s --height 20%)
+  found=$(cat "$HISTFILE" | awk '/^#[0-9]+$/ {next} {sub(/^[[:space:]]*[0-9]+[[:space:]]*/,""); gsub(/^[[:space:]]+|[[:space:]]+$/,""); gsub(/[[:space:]]+/," "); lines[++n]=$0} END {for(i=n;i>=1;i--) if(!seen[lines[i]]++) print lines[i]}' | fzf -e +s --height 20%)
   if [[ -n $found ]]; then
     READLINE_LINE=$found
     READLINE_POINT=0x7fffffff
